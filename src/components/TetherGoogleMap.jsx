@@ -326,7 +326,7 @@ export default function TetherGoogleMap({
         data-map-tier={tier}
       >
         <h3 className="font-heading font-bold text-lg">London map preview</h3>
-        <p className="text-sm font-body text-muted-foreground mt-1">Add your Google Maps API key and Map IDs to enable the live styled map.</p>
+        <p className="text-sm font-body text-muted-foreground mt-1">The live map is temporarily unavailable right now. Please try again shortly.</p>
       </div>
     );
   }

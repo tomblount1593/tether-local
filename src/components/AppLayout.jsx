@@ -42,7 +42,7 @@ export default function AppLayout() {
       className="min-h-screen flex flex-col bg-background"
       style={{
         ["--membership-banner-height"]: "48px",
-        ["--bottom-nav-height"]: "66px",
+        ["--bottom-nav-height"]: "calc(72px + env(safe-area-inset-bottom, 0px))",
       }}
     >
       {/* Global membership banner — sticky, above Toaster (z-100) */}
@@ -55,7 +55,7 @@ export default function AppLayout() {
       </div>
 
       <nav className="fixed bottom-0 left-0 right-0 z-50 bottom-nav" data-testid="bottom-nav" style={{ background: navBg, borderTop: `1px solid ${navBorder}`, height: "var(--bottom-nav-height)" }}>
-        <div className="max-w-lg mx-auto h-full flex items-center justify-around py-1.5 px-1">
+        <div className="max-w-lg mx-auto h-full flex items-start justify-around px-1" style={{ paddingTop: "6px", paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 14px)" }}>
           {navItems.map((item) => {
             const isActive =
               location.pathname === item.path ||

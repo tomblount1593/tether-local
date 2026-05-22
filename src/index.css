@@ -342,6 +342,14 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+input,
+textarea,
+select {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+}
+
 @supports (-webkit-touch-callout: none) {
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="color"]),
   textarea,
@@ -350,6 +358,20 @@ html {
   [contenteditable="plaintext-only"],
   [role="textbox"] {
     font-size: max(16px, 1em) !important;
+  }
+
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"] {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    display: block;
+    appearance: none;
+    -webkit-appearance: none;
+    background-clip: padding-box;
   }
 }
 

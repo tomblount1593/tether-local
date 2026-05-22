@@ -123,11 +123,11 @@ export default function DateBooking() {
         </div>
       </div>
 
-      <div className="rounded-2xl border-2 border-primary bg-card p-3.5 space-y-3" style={primaryOutlineStyle} data-testid="date-booking-time-options">
+      <div className="min-w-0 rounded-2xl border-2 border-primary bg-card p-3.5 space-y-3" style={primaryOutlineStyle} data-testid="date-booking-time-options">
         <SectionBanner title="Date" subtitle="Choose your day" tier={membershipTier} />
-        <input aria-label="Date" value={date} onChange={(e) => setDate(e.target.value)} type="date" className="w-full rounded-xl border border-border bg-[#e7e5e1] px-3 py-2 text-sm" />
+        <input aria-label="Date" value={date} onChange={(e) => setDate(e.target.value)} type="date" className="date-booking-native-input w-full rounded-xl border border-border bg-[#e7e5e1] px-3 py-2 text-sm" />
         <SectionBanner title="Time" subtitle="Pick a suitable time" tier={membershipTier} />
-        <div className="grid grid-cols-5 gap-2">
+        <div className="min-w-0 grid grid-cols-5 gap-2">
           {TIMES.map((t) => (
             <button
               type="button"
@@ -140,7 +140,7 @@ export default function DateBooking() {
             </button>
           ))}
         </div>
-        <div className="rounded-xl border border-border bg-[#e7e5e1] px-3 py-2">
+        <div className="min-w-0 rounded-xl border border-border bg-[#e7e5e1] px-3 py-2">
           <label htmlFor="custom-booking-time" className="block text-xs font-medium mb-1">
             Choose another time that suits you
           </label>
@@ -152,12 +152,12 @@ export default function DateBooking() {
               setCustomTime(e.target.value);
               if (e.target.value) setTime(e.target.value);
             }}
-            className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm"
+            className="date-booking-native-input w-full rounded-lg border border-border bg-background px-3 py-2 text-sm"
           />
         </div>
       </div>
 
-      <div className="rounded-2xl border-2 border-primary bg-card p-3.5 space-y-3" style={primaryOutlineStyle} data-testid="date-booking-location-options">
+      <div className="min-w-0 rounded-2xl border-2 border-primary bg-card p-3.5 space-y-3" style={primaryOutlineStyle} data-testid="date-booking-location-options">
         <SectionBanner title="Preferred location" subtitle="Pick where to meet" tier={membershipTier} />
         <div className="rounded-xl border border-border bg-background p-3 text-center">
           <p className="text-sm font-semibold">{selectedLocation ? "Preferred location" : "Choose preferred location"}</p>

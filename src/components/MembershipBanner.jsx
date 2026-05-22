@@ -4,6 +4,7 @@ import { useTier } from "../hooks/useTier";
 import { Link, useLocation } from "react-router-dom";
 import { getMembershipTheme } from "@/brand/membershipTheme";
 import DevPill from "@/components/dev/DevPill";
+import { shouldEnableDevTools } from "@/components/dev/devToolsVisibility";
 import { getMembershipRoute } from "@/lib/matchFlowRoutes";
 
 const STRIP = {
@@ -146,7 +147,7 @@ export default function MembershipBanner({ forcedTier = null }) {
 
   const s = STRIP[activeTier] || STRIP.standard;
   const p = PANEL[activeTier] || PANEL.standard;
-  const isDev = Boolean(import.meta.env.DEV);
+  const showDevButton = shouldEnableDevTools(location.pathname);
 
 
   // Determine divider color based on tier
@@ -207,7 +208,7 @@ export default function MembershipBanner({ forcedTier = null }) {
         </button>
 
         <div style={{ justifySelf: "end", paddingRight: "clamp(10px, 3vw, 16px)" }}>
-          {isDev ? (
+          {showDevButton ? (
             <DevPill tier={activeTier} onClick={() => window.dispatchEvent(new Event("tether-dev-toggle"))} />
           ) : null}
         </div>

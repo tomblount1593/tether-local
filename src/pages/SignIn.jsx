@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useTier } from "@/hooks/useTier";
 import { getMembershipTheme } from "@/brand/membershipTheme";
 import DevPill from "@/components/dev/DevPill";
+import { shouldEnableDevTools } from "@/components/dev/devToolsVisibility";
 import { toast } from "sonner";
 import { useEffect } from "react";
 import { getAppRoute } from "@/lib/matchFlowRoutes";
@@ -73,7 +74,7 @@ export default function SignIn() {
   }, [location.pathname, setTier]);
   const membershipTheme = getMembershipTheme(tier);
   const colors = getIntroColors(tier);
-  const isDev = Boolean(import.meta.env.DEV);
+  const showDevButton = shouldEnableDevTools(location.pathname);
   const getLandingRouteForMembership = () => {
     if (location.pathname === "/sign-in-premium" || tier === "premium") return "/landing-premium";
     if (location.pathname === "/sign-in-concierge" || tier === "concierge") return "/landing-concierge";
@@ -109,7 +110,7 @@ export default function SignIn() {
         </button>
         <div />
         <div className="signin-dev-slot">
-          {isDev ? <DevPill tier={tier} onClick={() => window.dispatchEvent(new Event("tether-dev-toggle"))} /> : null}
+          {showDevButton ? <DevPill tier={tier} onClick={() => window.dispatchEvent(new Event("tether-dev-toggle"))} /> : null}
         </div>
       </div>
 

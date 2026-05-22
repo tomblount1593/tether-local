@@ -4,7 +4,8 @@ import { useLocation, useNavigate, matchPath } from "react-router-dom";
 import { Copy, ExternalLink, GripVertical, RefreshCw, Search, Star, X } from "lucide-react";
 import { DEV_ROUTES, DEV_ROUTE_GROUP_ORDER, type DevRouteDef, type DevRouteGroupKey } from "@/constants/devRoutes";
 import { useTier } from "@/hooks/useTier";
-import { shouldEnableDevTools } from "@/components/dev/devToolsVisibility";
+import DevPill from "@/components/dev/DevPill";
+import { shouldEnableDevTools, shouldUseInlineDevPill } from "@/components/dev/devToolsVisibility";
 
 const FAV_KEY = "tether_dev_route_favorites";
 const FAV_GROUP_ORDER_KEY = "tether_dev_route_favorite_group_order";
@@ -296,6 +297,7 @@ export default function DevRouteSwitcher({ hideLauncher = false }: DevRouteSwitc
   const navigate = useNavigate();
   const { tier } = useTier();
   const devToolsEnabled = shouldEnableDevTools(location.pathname);
+  const usesInlineDevPill = shouldUseInlineDevPill(location.pathname);
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [activeTab, setActiveTab] = useState<TabKey>("all");
@@ -512,18 +514,13 @@ export default function DevRouteSwitcher({ hideLauncher = false }: DevRouteSwitc
 
   return (
     <>
-      {!hideLauncher ? (
-        <button
-          type="button"
+      {!hideLauncher && !usesInlineDevPill ? (
+        <DevPill
+          tier={tier}
+          className="fixed z-[2000]"
           onClick={() => setOpen((prev) => !prev)}
-          className="fixed z-[2000] h-[clamp(44px,11vw,58px)] w-[clamp(44px,11vw,58px)] rounded-full border text-[clamp(8px,2vw,10px)] font-semibold uppercase tracking-[0.02em] shadow-[0_12px_28px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-[14px] transition-all hover:scale-[1.02]"
-          style={{ ...launcherStyle, background: colorSet.launcherBg, color: colorSet.launcherText, borderColor: colorSet.launcherBorder }}
-          aria-label="Toggle Developer Route Switcher"
-        >
-          DEV
-          <br />
-          PAGES
-        </button>
+          style={launcherStyle}
+        />
       ) : null}
 
       <div className={`fixed z-[1999] transition-all duration-300 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} ${panelClass}`} style={panelStyle}>

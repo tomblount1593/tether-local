@@ -21,6 +21,7 @@ import {
 } from "@/utils/interestedUnlockVisibility";
 import { getBookDateRoute, getMembershipRoute } from "@/lib/matchFlowRoutes";
 import CompatibilityBreakdown from "@/components/CompatibilityBreakdown";
+import { shouldEnableDevTools } from "@/components/dev/devToolsVisibility";
 
 const PACKS = [
   { id: "pack-1", cap: 1, title: "Unlock 1 Match", each: "", total: "£3.99", save: "", detail: "Reveal 1 interested profile." },
@@ -360,8 +361,8 @@ function DateConfirmationModal({
 }
 
 export default function InterestedInYou() {
-  const navigate = useNavigate();
   const location = useLocation();
+  const navigate = useNavigate();
   const { tier } = useTier();
   const { context, matches, setContext } = useCurrentDemoMatches("interested");
   const effectiveTier = tier || context.membershipTier || "standard";
@@ -370,6 +371,7 @@ export default function InterestedInYou() {
   const [pendingPack, setPendingPack] = useState(null);
   const [showOptions, setShowOptions] = useState(true);
   const [notice, setNotice] = useState("");
+  const showDevButton = shouldEnableDevTools(location.pathname);
   const [previewInterestedMatch, setPreviewInterestedMatch] = useState(null);
   const [selectedInterestedMatch, setSelectedInterestedMatch] = useState(null);
 
@@ -636,7 +638,7 @@ export default function InterestedInYou() {
             </div>
           ) : null}
 
-          {import.meta.env.DEV ? (
+          {showDevButton ? (
             <div className="rounded-lg border px-3 py-2" style={{ background: "rgba(55, 66, 58, 0.04)", borderColor: "rgba(55, 66, 58, 0.16)" }}>
               <button
                 type="button"

@@ -1,4 +1,4 @@
-export default function DevPill({ tier = "standard", className = "", onClick }) {
+export default function DevPill({ tier = "standard", className = "", style, onClick }) {
   const theme =
     tier === "concierge"
       ? {
@@ -31,6 +31,7 @@ export default function DevPill({ tier = "standard", className = "", onClick }) 
         ["--dev-pill-bg-hover"]: theme.bgHover,
         ["--dev-pill-text"]: theme.text,
         ["--dev-pill-border"]: theme.border,
+        ...style,
       }}
       aria-label="Open Developer Pages"
     >
@@ -38,4 +39,3 @@ export default function DevPill({ tier = "standard", className = "", onClick }) 
     </button>
   );
 }
-

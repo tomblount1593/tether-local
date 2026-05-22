@@ -207,7 +207,7 @@ const AuthenticatedApp = () => {
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-      <DevRouteSwitcher hideLauncher />
+      <DevRouteSwitcher />
     </>
   );
 };

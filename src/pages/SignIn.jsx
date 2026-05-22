@@ -75,11 +75,6 @@ export default function SignIn() {
   const membershipTheme = getMembershipTheme(tier);
   const colors = getIntroColors(tier);
   const showDevButton = shouldEnableDevTools(location.pathname);
-  const getLandingRouteForMembership = () => {
-    if (location.pathname === "/sign-in-premium" || tier === "premium") return "/landing-premium";
-    if (location.pathname === "/sign-in-concierge" || tier === "concierge") return "/landing-concierge";
-    return "/landing-standard";
-  };
 
   return (
     <div
@@ -105,7 +100,7 @@ export default function SignIn() {
       }}
     >
       <div className="signin-top-row">
-        <button type="button" className="signin-back-button flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors" onClick={() => navigate(getLandingRouteForMembership())}>
+        <button type="button" className="signin-back-button flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors" onClick={() => navigate("/landing-standard")}>
           <ArrowLeft className="w-4 h-4" /> Back
         </button>
         <div />

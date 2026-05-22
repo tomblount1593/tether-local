@@ -11,12 +11,12 @@ const getSignInRouteForTier = (tier) => {
 
 export default function LandingPage({ forcedTier }) {
   const navigate = useNavigate();
-  const { tier, setTier } = useTier();
-  const activeTier = forcedTier || tier;
+  const { setTier } = useTier();
+  const activeTier = forcedTier || "standard";
 
   useEffect(() => {
-    if (forcedTier) setTier(forcedTier);
-  }, [forcedTier, setTier]);
+    setTier(activeTier);
+  }, [activeTier, setTier]);
 
   return (
     <TetherIntroLayout

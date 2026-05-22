@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
@@ -79,8 +79,8 @@ const AuthenticatedApp = () => {
         {/* ── Onboarding (never touch these) ─────────────────────────────── */}
         <Route path="/"                        element={<LandingPage />} />
         <Route path="/landing-standard"        element={<LandingPage forcedTier="standard" />} />
-        <Route path="/landing-premium"         element={<LandingPage forcedTier="premium" />} />
-        <Route path="/landing-concierge"       element={<LandingPage forcedTier="concierge" />} />
+        <Route path="/landing-premium"         element={<Navigate to="/landing-standard" replace />} />
+        <Route path="/landing-concierge"       element={<Navigate to="/landing-standard" replace />} />
         <Route path="/onboarding"               element={<Onboarding />} />
         <Route path="/onboarding-gay"           element={<Onboarding />} />
         <Route path="/onboarding-section01"      element={<Onboarding />} />

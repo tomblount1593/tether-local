@@ -1,0 +1,1149 @@
+001: # CODEX PROMPT — FINAL STRAIGHT COMPATIBILITY MASTER DOCUMENT
+003: Update the Tether Straight Compatibility Assessment to this final master version.
+005: Do not redesign anything.
+007: Do not change:
+008: - styling
+009: - typography
+010: - layout
+011: - section UI
+012: - progress system
+013: - routing structure
+014: - navigation
+015: - DEV tools
+016: - membership themes
+017: - app structure
+019: The assessment must contain:
+020: - 2 straight variants
+021: - Straight — Female Gender
+022: - Straight — Male Gender
+024: Each variant must contain:
+025: - 5 sections
+026: - 10 questions per section
+027: - 50 questions total
+029: Section titles:
+030: 1. Your Type
+031: 2. Romantic Pattern
+032: 3. Intent & Values
+033: 4. Lifestyle & Social Fit
+034: 5. First Impression & Vibe
+036: This is NOT:
+037: - a swipe mechanic
+038: - a hot-or-not system
+039: - a photo ranking system
+040: - a body scoring system
+042: The experience should feel:
+043: - calm
+044: - premium
+045: - emotionally intelligent
+046: - modern
+047: - intentional
+048: - emotionally safe
+050: --------------------------------------------------
+051: STRAIGHT ROUTING
+052: --------------------------------------------------
+054: If:
+055: - user gender = female
+056: - seeking = men
+058: Use:
+059: Straight — Female Gender Assessment
+061: If:
+062: - user gender = male
+063: - seeking = women
+065: Use:
+066: Straight — Male Gender Assessment
+068: Do not merge both into one generic straight assessment.
+070: --------------------------------------------------
+071: SHARED SECTION INTRO COPY
+072: --------------------------------------------------
+074: SECTION 01 — YOUR TYPE
+076: Quote:
+077: “Attraction is personal. The more clearly we understand your type, the more naturally we can tailor who you see.”
+079: Why:
+080: This helps us understand the looks, traits, and presentation styles you’re most drawn to — and how flexible that attraction is.
+082: --------------------------------------------------
+084: SECTION 02 — ROMANTIC PATTERN
+086: Quote:
+087: “What has worked for you before — and what hasn’t — often reveals more than preference alone.”
+089: Why:
+090: This helps us learn your dating patterns, what tends to repeat, and what kind of connection is more likely to feel healthy and lasting.
+092: --------------------------------------------------
+094: SECTION 03 — INTENT & VALUES
+096: Quote:
+097: “The right connection starts with wanting similar things — and being ready for them.”
+099: Why:
+100: This helps us understand what you want right now, what matters most to you, and what kind of future fit is important.
+102: --------------------------------------------------
+104: SECTION 04 — LIFESTYLE & SOCIAL FIT
+106: Quote:
+107: “Real compatibility lives in the everyday — not just in chemistry.”
+109: Why:
+110: This helps us learn how you live, socialise, communicate, and build your day-to-day life — so matches feel natural in the real world.
+112: --------------------------------------------------
+114: SECTION 05 — FIRST IMPRESSION & VIBE
+116: Quote:
+117: “Chemistry is more than looks — it’s how someone comes across, and how that feels in real life.”
+119: Why:
+120: This helps us understand the energy you give off, the energy you’re drawn to, and the kind of chemistry that feels believable and mutual.
+122: ==================================================
+123: STRAIGHT — FEMALE GENDER ASSESSMENT
+124: ==================================================
+126: For:
+127: Women seeking men.
+129: Avoid:
+130: - alpha/beta language
+131: - “real man” wording
+132: - sexist assumptions
+133: - implying men must lead
+134: - crude sexual framing
+136: Use:
+137: - men you’re drawn to
+138: - the kind of man who feels like your type
+139: - grounded
+140: - polished
+141: - masculine
+142: - expressive
+143: - emotionally safe
+145: --------------------------------------------------
+146: SECTION 1 — YOUR TYPE
+147: --------------------------------------------------
+149: Q1.1 — Overall Attraction Direction
+151: type: slider
+152: id: overall_attraction_direction
+154: prompt:
+155: What overall look are you usually most drawn to in men?
+157: scale:
+158: 0 = softer / approachable
+159: 0.5 = balanced
+160: 1 = sharper / more defined
+162: --------------------------------------------------
+164: Q1.2 — Face & Presence Type
+166: type: multi_select
+167: id: face_aesthetic_pref
+169: prompt:
+170: Which overall looks tend to feel like your type?
+172: microcopy:
+173: Select all that feel honest.
+175: options:
+176: - value: cute_boy_next_door
+177:   label: approachable and cute
+178: - value: classic_handsome
+179:   label: classically handsome
+180: - value: rugged_masculine
+181:   label: rugged and masculine
+182: - value: polished_refined
+183:   label: polished and refined
+184: - value: striking_editorial
+185:   label: striking style
+186: - value: mature_sophisticated
+187:   label: mature and sophisticated
+188: - value: soft_gentle
+189:   label: soft and gentle
+190: - value: intense_confident
+191:   label: intense and confident
+192: - value: distinctive_presence
+193:   label: stands out naturally
+194: - value: not_sure_yet
+195:   label: still figuring it out
+197: --------------------------------------------------
+199: Q1.3 — Grooming & Self-Care
+201: type: multi_select
+202: id: grooming_style_pref
+204: prompt:
+205: Which presentation styles do you find attractive in men?
+207: options:
+208: - value: clean_put_together
+209:   label: clean and put together
+210: - value: slightly_scruffy
+211:   label: slightly scruffy
+212: - value: very_well_groomed
+213:   label: very well-groomed
+214: - value: natural_low_effort
+215:   label: natural and relaxed
+216: - value: intentional_style
+217:   label: clear personal style
+218: - value: healthy_fresh
+219:   label: healthy and fresh
+220: - value: polished_confident
+221:   label: polished and confident
+222: - value: looks_after_themselves
+223:   label: looks after themselves
+224: - value: expressive_presentation
+225:   label: expressive style
+226: - value: no_strong_preference
+227:   label: no strong preference
+229: --------------------------------------------------
+231: Q1.4 — Facial Hair Preferences
+233: type: multi_select
+234: id: facial_hair_pref
+236: prompt:
+237: Which facial hair styles are you usually into?
+239: options:
+240: - value: clean_shaven
+241:   label: clean shaven
+242: - value: very_light_stubble
+243:   label: very light stubble
+244: - value: light_stubble
+245:   label: light stubble
+246: - value: heavy_stubble
+247:   label: heavier stubble
+248: - value: short_beard
+249:   label: short beard
+250: - value: full_beard
+251:   label: full beard
+252: - value: moustache
+253:   label: moustache
+254: - value: moustache_and_beard
+255:   label: moustache and beard
+256: - value: rugged_beard
+257:   label: rugged beard
+258: - value: no_strong_preference
+259:   label: no strong preference
+261: --------------------------------------------------
+263: Q1.5 — Hair & Head Look
+265: type: multi_select
+266: id: hair_style_pref
+268: prompt:
+269: Which hair styles or head looks are you usually drawn to?
+271: options:
+272: - value: shaved_or_bald
+273:   label: shaved or bald
+274: - value: buzz_or_close_crop
+275:   label: buzz cut
+276: - value: fade_haircut
+277:   label: fade haircut
+278: - value: short_clean
+279:   label: short and clean
+280: - value: textured_short
+281:   label: textured short hair
+282: - value: curly_or_natural_texture
+283:   label: curly or natural texture
+284: - value: medium_flow
+285:   label: medium-length hair
+286: - value: long_hair
+287:   label: longer hair
+288: - value: polished_style
+289:   label: styled and polished
+290: - value: dyed_or_alternative
+291:   label: dyed or alternative
+292: - value: no_strong_preference
+293:   label: no strong preference
+295: --------------------------------------------------
+297: Q1.6 — Facial Details
+299: type: multi_select
+300: id: face_detail_pref
+302: prompt:
+303: What facial details tend to stand out most to you?
+305: selection_rule:
+306: Select up to 5.
+308: options:
+309: - value: nice_smile
+310:   label: nice smile
+311: - value: straight_teeth
+312:   label: straight teeth
+313: - value: bright_eyes
+314:   label: bright eyes
+315: - value: expressive_eyes
+316:   label: expressive eyes
+317: - value: deep_set_eyes
+318:   label: deeper-set eyes
+319: - value: strong_jawline
+320:   label: strong jawline
+321: - value: high_cheekbones
+322:   label: high cheekbones
+323: - value: soft_features
+324:   label: softer features
+325: - value: intense_look
+326:   label: intense look
+327: - value: warm_friendly_expression
+328:   label: warm expression
+329: - value: distinctive_face
+330:   label: memorable face
+331: - value: natural_ease
+332:   label: natural ease
+334: --------------------------------------------------
+336: Q1.7 — Body & Physical Presence
+338: type: multi_select
+339: id: body_presence_pref
+341: prompt:
+342: Which physical presence do you usually find attractive?
+344: options:
+345: - value: slim
+346:   label: slim
+347: - value: lean
+348:   label: lean
+349: - value: athletic
+350:   label: athletic
+351: - value: toned
+352:   label: toned
+353: - value: muscular
+354:   label: muscular
+355: - value: broad
+356:   label: broader build
+357: - value: stocky
+358:   label: stockier build
+359: - value: soft_dadbod
+360:   label: softer build
+361: - value: larger_frame
+362:   label: larger frame
+363: - value: compact_frame
+364:   label: compact frame
+365: - value: tall_presence
+366:   label: taller presence
+367: - value: no_strong_preference
+368:   label: no strong preference
+370: --------------------------------------------------
+372: Q1.8 — Style & Visual Signals
+374: type: multi_select
+375: id: style_visual_pref
+377: prompt:
+378: Which style signals make someone more your type?
+380: selection_rule:
+381: Pick your top 6.
+383: options:
+384: - clean_cut
+385: - sporty
+386: - masculine_casual
+387: - rugged
+388: - artsy
+389: - streetwear
+390: - minimal
+391: - fashion_forward
+392: - classic_elegant
+393: - luxury_refined
+394: - gym_or_wellness_led
+395: - nightlife_polished
+396: - professional_presentation
+397: - tattoos
+398: - piercings
+399: - jewellery
+400: - glasses
+401: - body_hair
+402: - low_key_natural
+404: --------------------------------------------------
+406: Q1.9 — Attraction Reality Check
+408: type: single_select
+409: id: attraction_reality_check
+411: prompt:
+412: Looking back, who have you actually had the best chemistry with?
+414: options:
+415: - value: exactly_my_usual_type
+416:   label: exactly my usual type
+417: - value: close_to_my_type_but_not_exact
+418:   label: close to my usual type
+419: - value: someone_who_surprised_me
+420:   label: someone who surprised me
+421: - value: personality_changed_the_attraction
+422:   label: personality changed the attraction
+423: - value: chemistry_mattered_more_than_type
+424:   label: chemistry mattered more than type
+425: - value: i_am_still_learning_my_type
+426:   label: still learning my type
+428: --------------------------------------------------
+430: Q1.10 — Attraction Flexibility
+432: type: slider
+433: id: your_type_flexibility
+435: prompt:
+436: How flexible are you on your physical type overall?
+438: scale:
+439: 0 = very specific
+440: 0.5 = somewhat flexible
+441: 1 = very open
+443: ==================================================
+444: STRAIGHT — MALE GENDER ASSESSMENT
+445: ==================================================
+447: For:
+448: Men seeking women.
+450: Avoid:
+451: - objectifying language
+452: - “hot girl” wording
+453: - purity/modesty framing
+454: - submissive/dominant stereotypes
+455: - crude sexual language
+457: Use:
+458: - women you’re drawn to
+459: - the kind of woman who feels like your type
+460: - natural
+461: - polished
+462: - feminine
+463: - grounded
+464: - expressive
+465: - emotionally warm
+467: --------------------------------------------------
+468: SECTION 1 — YOUR TYPE
+469: --------------------------------------------------
+471: Q1.1 — Overall Attraction Direction
+473: type: slider
+474: id: overall_attraction_direction
+476: prompt:
+477: What overall look are you usually most drawn to in women?
+479: scale:
+480: 0 = soft / natural
+481: 0.5 = balanced
+482: 1 = striking / defined
+484: --------------------------------------------------
+486: Q1.2 — Face & Presence Type
+488: type: multi_select
+489: id: face_aesthetic_pref
+491: prompt:
+492: Which overall looks tend to feel like your type?
+494: microcopy:
+495: Select all that feel honest.
+497: options:
+498: - value: cute_soft
+499:   label: cute and soft
+500: - value: classic_pretty
+501:   label: classically pretty
+502: - value: natural_beauty
+503:   label: natural beauty
+504: - value: polished_refined
+505:   label: polished and refined
+506: - value: striking_editorial
+507:   label: striking style
+508: - value: mature_sophisticated
+509:   label: mature and sophisticated
+510: - value: warm_gentle
+511:   label: warm and gentle
+512: - value: confident_presence
+513:   label: confident presence
+514: - value: distinctive_presence
+515:   label: stands out naturally
+516: - value: not_sure_yet
+517:   label: still figuring it out
+519: --------------------------------------------------
+521: Q1.3 — Grooming & Self-Care
+523: type: multi_select
+524: id: grooming_style_pref
+526: prompt:
+527: Which presentation styles do you find attractive in women?
+529: options:
+530: - value: natural_low_effort
+531:   label: natural and relaxed
+532: - value: clean_put_together
+533:   label: clean and put together
+534: - value: very_well_groomed
+535:   label: very well-groomed
+536: - value: polished_beauty
+537:   label: polished beauty style
+538: - value: intentional_style
+539:   label: clear personal style
+540: - value: healthy_fresh
+541:   label: healthy and fresh
+542: - value: expressive_presentation
+543:   label: expressive style
+544: - value: elegant_refined
+545:   label: elegant and refined
+546: - value: looks_after_themselves
+547:   label: looks after themselves
+548: - value: no_strong_preference
+549:   label: no strong preference
+551: --------------------------------------------------
+553: Q1.4 — Presentation Details
+555: type: multi_select
+556: id: presentation_detail_pref
+558: prompt:
+559: Which presentation details tend to catch your attention?
+561: options:
+562: - value: natural_look
+563:   label: natural look
+564: - value: polished_beauty
+565:   label: polished beauty style
+566: - value: minimal_style
+567:   label: minimal style
+568: - value: bold_style
+569:   label: bold style
+570: - value: soft_feminine
+571:   label: soft feminine style
+572: - value: sporty_natural
+573:   label: sporty and natural
+574: - value: elegant_refined
+575:   label: elegant and refined
+576: - value: tattoos
+577:   label: tattoos
+578: - value: piercings
+579:   label: piercings
+580: - value: glasses
+581:   label: glasses
+582: - value: jewellery
+583:   label: jewellery
+584: - value: no_strong_preference
+585:   label: no strong preference
+587: --------------------------------------------------
+589: Q1.5 — Hair & Head Look
+591: type: multi_select
+592: id: hair_style_pref
+594: prompt:
+595: Which hair styles or head looks are you usually drawn to?
+597: options:
+598: - value: short_clean
+599:   label: short and clean
+600: - value: medium_flow
+601:   label: medium-length hair
+602: - value: long_hair
+603:   label: long hair
+604: - value: curly_or_natural_texture
+605:   label: curly or natural texture
+606: - value: styled_hair
+607:   label: styled hair
+608: - value: polished_style
+609:   label: polished style
+610: - value: natural_low_effort
+611:   label: natural and relaxed
+612: - value: dyed_or_alternative
+613:   label: dyed or alternative
+614: - value: tied_back_or_practical
+615:   label: tied back or practical
+616: - value: no_strong_preference
+617:   label: no strong preference
+619: --------------------------------------------------
+621: Q1.6 — Facial Details
+623: type: multi_select
+624: id: face_detail_pref
+626: prompt:
+627: What facial details tend to stand out most to you?
+629: selection_rule:
+630: Select up to 5.
+632: options:
+633: - value: nice_smile
+634:   label: nice smile
+635: - value: bright_eyes
+636:   label: bright eyes
+637: - value: expressive_eyes
+638:   label: expressive eyes
+639: - value: soft_features
+640:   label: soft features
+641: - value: defined_bone_structure
+642:   label: defined bone structure
+643: - value: warm_friendly_expression
+644:   label: warm expression
+645: - value: intense_look
+646:   label: intense look
+647: - value: distinctive_face
+648:   label: memorable face
+649: - value: natural_ease
+650:   label: natural ease
+651: - value: elegant_features
+652:   label: elegant features
+653: - value: playful_expression
+654:   label: playful expression
+655: - value: confident_expression
+656:   label: confident expression
+658: --------------------------------------------------
+660: Q1.7 — Body & Physical Presence
+662: type: multi_select
+663: id: body_presence_pref
+665: prompt:
+666: Which physical presence do you usually find attractive?
+668: options:
+669: - value: slim
+670:   label: slim
+671: - value: lean
+672:   label: lean
+673: - value: athletic
+674:   label: athletic
+675: - value: toned
+676:   label: toned
+677: - value: curvy
+678:   label: curvier build
+679: - value: soft_natural
+680:   label: soft and natural
+681: - value: petite_or_compact
+682:   label: petite or compact
+683: - value: tall_presence
+684:   label: taller presence
+685: - value: strong_presence
+686:   label: strong presence
+687: - value: balanced_build
+688:   label: balanced build
+689: - value: no_strong_preference
+690:   label: no strong preference
+692: --------------------------------------------------
+694: Q1.8 — Style & Visual Signals
+696: type: multi_select
+697: id: style_visual_pref
+699: prompt:
+700: Which style signals make someone more your type?
+702: selection_rule:
+703: Pick your top 6.
+705: options:
+706: - clean_cut
+707: - sporty
+708: - casual
+709: - soft_feminine
+710: - classic_elegant
+711: - luxury_refined
+712: - minimal
+713: - fashion_forward
+714: - streetwear
+715: - artsy
+716: - alternative
+717: - professional_polished
+718: - natural_low_key
+719: - bold_confident
+720: - tattoos
+721: - piercings
+722: - jewellery
+723: - glasses
+725: --------------------------------------------------
+727: Q1.9 — Attraction Reality Check
+729: type: single_select
+730: id: attraction_reality_check
+732: prompt:
+733: Looking back, who have you actually had the best chemistry with?
+735: options:
+736: - value: exactly_my_usual_type
+737:   label: exactly my usual type
+738: - value: close_to_my_type_but_not_exact
+739:   label: close to my usual type
+740: - value: someone_who_surprised_me
+741:   label: someone who surprised me
+742: - value: personality_changed_the_attraction
+743:   label: personality changed the attraction
+744: - value: chemistry_mattered_more_than_type
+745:   label: chemistry mattered more than type
+746: - value: i_am_still_learning_my_type
+747:   label: still learning my type
+749: --------------------------------------------------
+751: Q1.10 — Attraction Flexibility
+753: type: slider
+754: id: your_type_flexibility
+756: prompt:
+757: How flexible are you on your physical type overall?
+759: scale:
+760: 0 = very specific
+761: 0.5 = somewhat flexible
+762: 1 = very open
+764: ==================================================
+765: SHARED SECTION 2 — ROMANTIC PATTERN
+766: ==================================================
+768: Female routing wording:
+769: Which kinds of men have you dated or been drawn to before?
+771: Male routing wording:
+772: Which kinds of women have you dated or been drawn to before?
+774: All other wording should use:
+775: - people
+776: - someone
+777: - a partner
+779: --------------------------------------------------
+781: Q2.1 — Past Dating Patterns
+783: type: multi_select
+784: id: past_dating_types
+786: options:
+787: - emotionally_available
+788: - emotionally_unavailable
+789: - fun_adventurous
+790: - serious_stable
+791: - confident_assertive
+792: - soft_sensitive
+793: - ambitious_driven
+794: - creative_free_spirited
+795: - nurturing_caring
+796: - independent_distant
+797: - high_chemistry_low_stability
+798: - calm_grounded
+799: - expressive_intense
+800: - low_key_private
+801: - socially_outgoing
+802: - inconsistent_mixed_signals
+803: - relationship_ready
+804: - still_figuring_things_out
+805: - traditional_or_complementary_dynamic
+807: --------------------------------------------------
+809: Q2.2 — What Actually Worked
+811: options:
+812: - emotionally_available
+813: - calm_grounded
+814: - consistent_reliable
+815: - communicative
+816: - affectionate_warm
+817: - relationship_ready
+818: - emotionally_mature
+819: - aligned_on_values
+820: - easy_to_be_with
+821: - strong_chemistry
+822: - supportive_of_my_goals
+823: - safe_to_be_myself
+825: --------------------------------------------------
+827: Q2.3 — Exciting but Didn’t Last
+829: options:
+830: - emotionally_unavailable
+831: - inconsistent_mixed_signals
+832: - intense_fast_start
+833: - high_chemistry_low_stability
+834: - avoidant_guarded
+835: - chaotic_unpredictable
+836: - overly_independent
+837: - attractive_but_misaligned
+838: - fun_but_not_serious
+839: - different_life_stage
+840: - confusing_intensity_with_security
+841: - potential_over_reality
+843: --------------------------------------------------
+845: Q2.4 — Closeness Pattern
+847: options:
+848: - steady_and_open
+849: - want_reassurance_quickly
+850: - hold_back_and_protect_myself
+851: - want_closeness_then_feel_overwhelmed
+852: - chemistry_first_clarity_later
+853: - i_take_time_to_trust
+855: --------------------------------------------------
+857: Q2.5 — Conflict Response
+859: options:
+860: - address_it_directly
+861: - need_time_then_talk
+862: - avoid_it_and_hope_it_fades
+863: - get_emotionally_reactive
+864: - go_quiet_and_withdraw
+865: - try_to_keep_the_peace
+867: --------------------------------------------------
+869: Q2.6 — Conflict Repair
+871: axes:
+872: - i_can_apologise_when_i_am_wrong
+873: - i_can_hear_difficult_feedback_without_shutting_down
+874: - i_can_stay_respectful_when_i_am_hurt
+875: - i_can_maintain_boundaries_without_becoming_cold
+876: - i_try_to_learn_from_conflict_instead_of_repeating_it
+878: --------------------------------------------------
+880: Q2.7 — Emotional Safety & Support
+882: axes:
+883: - i_can_express_needs_without_fear_of_judgment
+884: - i_feel_emotionally_understood_and_validated
+885: - i_can_support_someone_through_stress_or_illness
+886: - sensitive_past_experiences_can_be_handled_with_care
+887: - calm_repair_after_difficult_moments_matters_to_me
+889: --------------------------------------------------
+891: Q2.8 — Humour & Resilience
+893: options:
+894: - shared_laughter_helps_me_reconnect
+895: - especially_helpful_during_stress
+896: - nice_but_not_essential
+897: - i_prefer_calm_seriousness
+898: - depends_on_the_person
+900: --------------------------------------------------
+902: Q2.9 — Pattern Awareness
+904: options:
+905: - being_fully_myself
+906: - communicating_through_problems
+907: - maintaining_boundaries
+908: - repeating_the_same_pattern
+909: - choosing_unavailable_people
+910: - moving_too_fast
+911: - struggling_to_open_up
+912: - avoiding_difficult_conversations
+913: - focusing_on_potential_over_reality
+914: - confusing_chemistry_with_compatibility
+915: - people_pleasing
+916: - losing_interest_when_it_becomes_real
+917: - unclear_expectations_around_roles_or_pace
+919: --------------------------------------------------
+921: Q2.10 — Romantic Pattern Flexibility
+923: scale:
+924: 0 = my past patterns strongly shape what works
+925: 0.5 = some patterns matter but I am open
+926: 1 = very open to something different
+928: ==================================================
+929: SHARED SECTION 3 — INTENT & VALUES
+930: ==================================================
+932: Q3.1 — Relationship Intent
+934: options:
+935: - long_term_partner
+936: - serious_relationship
+937: - open_to_see_where_it_goes
+938: - casual_but_meaningful
+939: - casual_low_pressure
+941: --------------------------------------------------
+943: Q3.2 — Relationship Readiness
+945: options:
+946: - fully_ready
+947: - mostly_ready
+948: - unsure_but_open
+949: - want_connection_not_full_commitment
+950: - rebuilding_after_past_experience
+952: --------------------------------------------------
+954: Q3.3 — Core Relationship Need
+956: options:
+957: - stability
+958: - enjoyment
+959: - care
+960: - deep_understanding
+961: - growth
+962: - exploration
+963: - emotional_safety
+965: --------------------------------------------------
+967: Q3.4 — Core Values
+969: options:
+970: - emotional_stability
+971: - ambition
+972: - independence
+973: - affection
+974: - consistency
+975: - fun_adventure
+976: - loyalty
+977: - growth
+978: - family
+979: - confidence
+980: - humour
+981: - calm
+982: - reliability
+983: - emotional_maturity
+984: - openness
+985: - kindness
+987: --------------------------------------------------
+989: Q3.5 — Values, Worldview & Meaning
+991: axes:
+992: - core_beliefs_and_moral_compass
+993: - life_goals_and_direction
+994: - spiritual_or_philosophical_outlook
+995: - openness_to_deeper_conversations
+996: - shared_sense_of_what_makes_life_meaningful
+998: --------------------------------------------------
+1000: Q3.6 — Future Alignment Topics
+1002: options:
+1003: - marriage
+1004: - children_parenting_or_family_building
+1005: - where_to_live
+1006: - career_ambition
+1007: - finances
+1008: - religion_spirituality
+1009: - family_closeness
+1010: - relationship_structure
+1011: - household_or_care_responsibilities
+1012: - lifestyle_priorities
+1014: --------------------------------------------------
+1016: Q3.7 — Future Direction & Adaptability
+1018: axes:
+1019: - moving_toward_common_goals
+1020: - being_able_to_compromise_without_losing_myself
+1021: - reassessing_the_future_openly_as_life_changes
+1022: - handling_unexpected_obstacles_as_a_team
+1023: - supporting_each_others_personal_direction
+1025: --------------------------------------------------
+1027: Q3.8 — Ambition & Mutual Support
+1029: options:
+1030: - encourage_each_others_goals
+1031: - support_each_other_but_stay_independent
+1032: - one_person_can_take_priority_sometimes
+1033: - need_a_similar_level_of_drive
+1034: - still_figuring_out_balance
+1036: --------------------------------------------------
+1038: Q3.9 — Relationship Structure & Star Sign Lens
+1040: options:
+1041: - monogamous_star_signs_for_fun
+1042: - monogamous_interested_in_star_signs
+1043: - open_or_flexible_star_signs_for_fun
+1044: - open_or_flexible_interested_in_star_signs
+1045: - unsure_but_open_to_discussing_structure
+1046: - do_not_use_star_signs
+1048: --------------------------------------------------
+1050: Q3.10 — Intent & Values Flexibility
+1052: scale:
+1053: 0 = very specific
+1054: 0.5 = somewhat flexible
+1055: 1 = open on some things
+1057: ==================================================
+1058: SHARED SECTION 4 — LIFESTYLE & SOCIAL FIT
+1059: ==================================================
+1061: Q4.1 — Lifestyle Identity
+1063: options:
+1064: - social_and_outgoing
+1065: - low_key_and_private
+1066: - routine_oriented
+1067: - spontaneous
+1068: - family_or_friend_group_connected
+1069: - independent_social_life
+1070: - saver
+1071: - spender
+1072: - career_first
+1073: - balance_first
+1074: - planner
+1075: - flexible
+1076: - wellness_focused
+1077: - nightlife_oriented
+1078: - culture_or_creativity_led
+1080: --------------------------------------------------
+1082: Q4.2 — Ideal Weekend & Shared Activities
+1084: options:
+1085: - food_and_restaurants
+1086: - fitness_or_sport
+1087: - travel_or_weekends_away
+1088: - culture_museums_events
+1089: - nightlife
+1090: - home_comfort
+1091: - intellectual_conversation
+1092: - creative_projects
+1093: - nature_outdoors
+1094: - shared_friend_groups
+1095: - family_time
+1096: - quiet_routine_together
+1098: --------------------------------------------------
+1100: Q4.3 — Personality & Daily Rhythm
+1102: axes:
+1103: - party_social_butterfly ↔ quiet_alone_time
+1104: - spontaneous_adventurous ↔ scheduled_predictable
+1105: - emotional_feeling_led ↔ logical_practical
+1106: - curious_intellectual ↔ grounded_simple
+1107: - clean_organised ↔ relaxed_flexible
+1108: - work_first ↔ play_balance_first
+1110: --------------------------------------------------
+1112: Q4.4 — Friends, Family & Social Circles
+1114: options:
+1115: - very_involved
+1116: - gradually_integrated
+1117: - separate_but_respectful
+1118: - depends_on_the_relationship
+1119: - not_a_major_factor
+1121: --------------------------------------------------
+1123: Q4.5 — Everyday Ease & Humour
+1125: options:
+1126: - shared_laughter_helps_me_feel_close
+1127: - especially_helpful_during_stress
+1128: - nice_but_not_essential
+1129: - i_prefer_calm_seriousness
+1130: - depends_on_the_person
+1132: --------------------------------------------------
+1134: Q4.6 — Home & Daily Responsibility
+1136: axes:
+1137: - cleanliness_and_organisation
+1138: - sharing_household_responsibilities_fairly
+1139: - talking_openly_about_expectations
+1140: - adjusting_responsibilities_when_life_changes
+1141: - showing_appreciation_for_everyday_contributions
+1143: --------------------------------------------------
+1145: Q4.7 — Communication Style
+1147: options:
+1148: - frequent_messages
+1149: - steady_not_constant
+1150: - more_in_person_than_text
+1151: - playful_flirty
+1152: - thoughtful_deeper
+1153: - practical_check_ins
+1154: - affectionate_reassurance
+1155: - space_then_reconnection
+1157: --------------------------------------------------
+1159: Q4.8 — Social Difference Tolerance
+1161: options:
+1162: - different_social_energy
+1163: - different_friendship_groups
+1164: - different_family_closeness
+1165: - different_nightlife_preferences
+1166: - different_public_affection_comfort
+1167: - different_alone_time_needs
+1168: - different_travel_or_adventure_needs
+1169: - different_work_intensity
+1171: --------------------------------------------------
+1173: Q4.9 — Support Under Stress
+1175: options:
+1176: - comfort_and_reassurance
+1177: - practical_help
+1178: - space_then_support
+1179: - humour_and_lightness
+1180: - direct_problem_solving
+1181: - quiet_presence
+1183: --------------------------------------------------
+1185: Q4.10 — Lifestyle & Social Flexibility
+1187: scale:
+1188: 0 = I need close alignment
+1189: 0.5 = somewhat flexible
+1190: 1 = open if the connection works well
+1192: ==================================================
+1193: SHARED SECTION 5 — FIRST IMPRESSION & VIBE
+1194: ==================================================
+1196: Q5.1 — Natural Energy
+1198: options:
+1199: - polished
+1200: - relaxed
+1201: - creative
+1202: - professional
+1203: - sporty
+1204: - warm
+1205: - understated
+1206: - confident
+1207: - playful
+1208: - reserved
+1209: - intense
+1210: - gentle
+1212: --------------------------------------------------
+1214: Q5.2 — Intended First Impression
+1216: options:
+1217: - attractive
+1218: - approachable
+1219: - high_quality
+1220: - fun
+1221: - serious_about_dating
+1222: - warm
+1223: - confident
+1224: - emotionally_available
+1225: - stylish
+1226: - grounded
+1227: - interesting
+1228: - safe_to_be_around
+1230: --------------------------------------------------
+1232: Q5.3 — Energy You’re Drawn To
+1234: options:
+1235: - polished
+1236: - relaxed
+1237: - creative
+1238: - grounded
+1239: - confident
+1240: - soft
+1241: - high_energy
+1242: - understated
+1243: - emotionally_open
+1244: - playful
+1245: - intellectually_curious
+1246: - calm
+1248: --------------------------------------------------
+1250: Q5.4 — First Date Chemistry Signals
+1252: options:
+1253: - easy_laughter
+1254: - natural_conversation
+1255: - strong_eye_contact
+1256: - physical_presence
+1257: - shared_values_come_through
+1258: - flirtation_feels_mutual
+1259: - comfortable_silences
+1260: - emotional_openness
+1261: - similar_humour
+1262: - i_feel_calm_and_interested
+1263: - they_feel_like_themselves
+1264: - there_is_real_curiosity
+1266: --------------------------------------------------
+1268: Q5.5 — Physical Intimacy Style
+1270: type: single_select
+1271: id: sexual_role_or_intimacy_style
+1273: prompt:
+1274: What feels most natural for you in physical intimacy?
+1276: microcopy:
+1277: Private and only used to improve compatibility.
+1279: options:
+1280: - more_initiating
+1281: - more_receptive
+1282: - balanced_equal
+1283: - clearly_complementary
+1284: - depends_on_connection
+1285: - still_exploring
+1287: Important:
+1288: Never use:
+1289: - top
+1290: - bottom
+1291: - versatile
+1292: - side
+1294: --------------------------------------------------
+1296: Q5.6 — Sexual Dynamic Preference
+1298: options:
+1299: - complementary_dynamic
+1300: - balanced_equal_dynamic
+1301: - flexible_depends_on_connection
+1302: - emotionally_led_chemistry
+1303: - varies_by_person
+1304: - still_exploring
+1306: --------------------------------------------------
+1308: Q5.7 — What Makes Intimacy Feel Satisfying
+1310: options:
+1311: - strong_chemistry
+1312: - emotional_safety
+1313: - feeling_desired
+1314: - clear_communication
+1315: - playfulness
+1316: - physical_confidence
+1317: - affection_before_and_after
+1318: - exploration_and_openness
+1319: - consistency
+1320: - feeling_fully_present
+1321: - trust
+1322: - tenderness
+1324: --------------------------------------------------
+1326: Q5.8 — Sexual Communication & Consent
+1328: axes:
+1329: - i_can_tell_or_show_a_partner_what_i_need
+1330: - i_can_speak_up_if_something_does_not_feel_right
+1331: - i_am_comfortable_discussing_sex
+1332: - i_am_responsive_when_a_partner_suggests_something_new
+1333: - i_want_turn_ons_and_turn_offs_to_be_respected
+1335: --------------------------------------------------
+1337: Q5.9 — Desire, Boundaries & Turn-Ons
+1339: options:
+1340: - emotional_safety_before_intimacy
+1341: - open_conversations_about_turn_ons
+1342: - playful_flirting_matters
+1343: - exploration_with_trust
+1344: - steady_and_familiar_rhythm
+1345: - clear_boundaries_matter
+1346: - comfort_discussing_desires
+1347: - privacy_until_trust_builds
+1348: - public_flirting_matters
+1349: - body_confidence_and_comfort
+1350: - sexual_health_conversations_matter
+1352: selection_rule:
+1353: Pick up to 5.
+1355: --------------------------------------------------
+1357: Q5.10 — Vibe & Intimacy Flexibility
+1359: scale:
+1360: 0 = very specific
+1361: 0.5 = somewhat flexible
+1362: 1 = very open
+1364: ==================================================
+1365: FINAL STRAIGHT OUTPUT MARKERS
+1366: ==================================================
+1368: Attraction & Type:
+1369: - attraction_marker
+1370: - face_aesthetic_marker
+1371: - facial_structure_marker
+1372: - grooming_marker
+1373: - facial_hair_marker
+1374: - presentation_detail_marker
+1375: - hair_style_marker
+1376: - body_presence_marker
+1377: - style_marker
+1378: - masculine_presentation_marker
+1379: - feminine_presentation_marker
+1380: - visual_energy_marker
+1381: - realistic_type_marker
+1382: - aspirational_gap_marker
+1383: - attraction_flexibility_marker
+1385: Romantic Pattern:
+1386: - romantic_pattern_marker
+1387: - attachment_marker
+1388: - conflict_style_marker
+1389: - repair_marker
+1390: - emotional_safety_marker
+1391: - support_needs_marker
+1392: - humour_resilience_marker
+1393: - pattern_risk_marker
+1394: - growth_alignment_marker
+1395: - romantic_pattern_flexibility_marker
+1397: Intent & Values:
+1398: - intent_marker
+1399: - readiness_marker
+1400: - core_need_marker
+1401: - values_marker
+1402: - worldview_marker
+1403: - future_alignment_marker
+1404: - adaptability_marker
+1405: - ambition_support_marker
+1406: - relationship_structure_marker
+1407: - zodiac_lens_marker
+1408: - intent_values_flexibility_marker
+1410: Lifestyle & Social Fit:
+1411: - lifestyle_marker
+1412: - social_fit_marker
+1413: - shared_interests_marker
+1414: - personality_rhythm_marker
+1415: - household_marker
+1416: - communication_style_marker
+1417: - support_style_marker
+1418: - social_difference_tolerance_marker
+1419: - practical_compatibility_marker
+1420: - lifestyle_social_flexibility_marker
+1422: First Impression & Vibe:
+1423: - first_impression_marker
+1424: - self_energy_marker
+1425: - desired_impression_marker
+1426: - energy_vibe_marker
+1427: - first_date_chemistry_marker
+1428: - sexual_style_marker
+1429: - sexual_dynamic_marker
+1430: - sexual_satisfaction_marker
+1431: - sexual_communication_marker
+1432: - desire_boundary_marker
+1433: - vibe_intimacy_flexibility_marker

@@ -1,0 +1,1003 @@
+001: CODEX PROMPT — FINAL GAY COMPATIBILITY MASTER DOCUMENT
+002: Update the Tether Gay Compatibility Assessment to this final master version.
+003: This is:
+004: the shared Tether compatibility system
+005: adapted for gay men dating men
+006: using the shared 5-section compatibility framework
+007: preserving shared scoring and assessment architecture
+008: Do not redesign the app.
+Do not change:
+009: onboarding flow
+010: navigation
+011: membership system
+012: progress system
+013: compatibility engine
+014: behavioural learning
+015: outcome learning
+016: shared UI system
+017: Only:
+018: update gay compatibility wording
+019: update answer labels
+020: preserve shared markers
+021: preserve private compatibility logic
+022: preserve premium Tether tone
+023: Assessment structure:
+024: 5 sections
+025: 10 questions per section
+026: 50 questions total
+027: Section titles:
+028: Your Type
+029: Romantic Pattern
+030: Intent & Values
+031: Lifestyle & Social Fit
+032: First Impression & Vibe
+033: Allowed question types:
+034: single_select
+035: multi_select
+036: slider
+037: slider_set
+038: No:
+039: photo rating
+040: attractiveness ranking
+041: stock portraits
+042: hot-or-not mechanics
+043: image cards
+044: clinical sexual language
+045: stereotype-led gay copy
+047: SECTION 1 — YOUR TYPE
+048: Q1.1 — Overall Attraction Direction
+049: type: slider
+id: overall_attraction_direction
+050: prompt:
+“What overall look are you usually most drawn to?”
+051: scale:
+0 = softer
+0.5 = balanced
+1 = sharper / more defined
+053: Q1.2 — Face & Presence Type
+054: type: multi_select
+id: face_aesthetic_pref
+055: prompt:
+“Which overall looks tend to feel like your type?”
+056: microcopy:
+“Select all that feel honest.”
+057: options:
+058: cute_and_easygoing
+059: classically_handsome
+060: rugged_and_masculine
+061: refined_and_polished
+062: bold_and_stylish
+063: mature_and_confident
+064: soft_and_gentle
+065: intense_and_confident
+066: naturally_stands_out
+067: still_figuring_it_out
+068: markers:
+069: face_aesthetic_marker
+070: masculine_presentation_marker
+071: visual_energy_marker
+073: Q1.3 — Grooming & Self-Care
+074: type: multi_select
+id: grooming_style_pref
+075: prompt:
+“Which presentation styles do you find attractive?”
+076: options:
+077: clean_and_put_together
+078: slightly_scruffy
+079: very_well_groomed
+080: natural_and_relaxed
+081: strong_personal_style
+082: healthy_and_fresh
+083: polished_and_confident
+084: looks_after_themselves
+085: expressive_style
+086: no_strong_preference
+087: markers:
+088: grooming_marker
+089: presentation_marker
+091: Q1.4 — Facial Hair Preferences
+092: type: multi_select
+id: facial_hair_pref
+093: prompt:
+“Which facial hair styles are you usually into?”
+094: options:
+095: clean_shaven
+096: very_light_stubble
+097: light_stubble
+098: heavy_stubble
+099: short_beard
+100: full_beard
+101: moustache
+102: moustache_and_beard
+103: rugged_beard
+104: no_strong_preference
+105: markers:
+106: facial_hair_marker
+107: masculine_presentation_marker
+108: Important:
+Keep facial_hair_pref as a private compatibility marker.
+110: Q1.5 — Hair & Head Look
+111: type: multi_select
+id: hair_style_pref
+112: prompt:
+“Which hair styles or head looks are you usually drawn to?”
+113: options:
+114: shaved_or_bald
+115: buzz_cut
+116: fade_haircut
+117: short_and_clean
+118: textured_short_hair
+119: curly_or_textured_hair
+120: medium_length_hair
+121: long_hair
+122: polished_style
+123: dyed_or_alternative
+124: no_strong_preference
+125: markers:
+126: hair_style_marker
+127: presentation_marker
+129: Q1.6 — Facial Details
+130: type: multi_select
+id: face_detail_pref
+131: prompt:
+“What facial details tend to stand out most to you?”
+132: selection_rule:
+Select up to 5.
+133: options:
+134: nice_smile
+135: straight_teeth
+136: bright_eyes
+137: expressive_eyes
+138: deep_set_eyes
+139: strong_jawline
+140: defined_cheekbones
+141: softer_features
+142: intense_look
+143: warm_expression
+144: memorable_face
+145: natural_ease
+146: markers:
+147: facial_structure_marker
+148: attraction_marker
+150: Q1.7 — Body & Physical Presence
+151: type: multi_select
+id: body_presence_pref
+152: prompt:
+“Which physical presence do you usually find attractive?”
+153: options:
+154: slim
+155: lean
+156: athletic
+157: toned
+158: muscular
+159: broader_build
+160: stockier_build
+161: softer_build
+162: larger_frame
+163: compact_frame
+164: taller_presence
+165: no_strong_preference
+166: markers:
+167: body_presence_marker
+168: attraction_marker
+170: Q1.8 — Style & Visual Signals
+171: type: multi_select
+id: style_visual_pref
+172: prompt:
+“Which style signals make someone more your type?”
+173: selection_rule:
+Pick your top 6.
+174: options:
+175: clean_cut
+176: sporty
+177: masculine_casual
+178: rugged
+179: creative
+180: streetwear
+181: minimal
+182: fashion_forward
+183: classic
+184: refined
+185: gym_or_wellness_focused
+186: nightlife_polished
+187: polished_professional
+188: tattoos
+189: piercings
+190: jewellery
+191: glasses
+192: body_hair
+193: low_key_and_natural
+194: markers:
+195: style_marker
+196: masculine_presentation_marker
+197: visual_energy_marker
+199: Q1.9 — Attraction Reality Check
+200: type: single_select
+id: attraction_reality_check
+201: prompt:
+“Looking back, who have you actually had the best chemistry with?”
+202: options:
+203: exactly_my_usual_type
+204: close_to_my_usual_type
+205: someone_who_surprised_me
+206: personality_changed_the_attraction
+207: chemistry_mattered_more_than_type
+208: still_learning_my_type
+209: markers:
+210: realistic_type_marker
+211: aspirational_gap_marker
+212: emotional_attraction_weight_marker
+214: Q1.10 — Attraction Flexibility
+215: type: slider
+id: your_type_flexibility
+216: prompt:
+“How flexible are you on your physical type overall?”
+217: scale:
+0 = very specific
+0.5 = somewhat flexible
+1 = very open
+218: markers:
+219: attraction_flexibility_marker
+221: SECTION 2 — ROMANTIC PATTERN
+222: Q2.1 — Past Dating Patterns
+223: type: multi_select
+id: past_dating_types
+224: prompt:
+“Which kinds of guys have you dated or been drawn to before?”
+225: options:
+226: emotionally_available
+227: emotionally_unavailable
+228: fun_and_adventurous
+229: serious_and_stable
+230: confident_and_direct
+231: soft_and_sensitive
+232: ambitious_and_driven
+233: creative_and_free_spirited
+234: caring_and_nurturing
+235: independent_but_distant
+236: strong_chemistry_but_unstable
+237: calm_and_grounded
+238: expressive_and_intense
+239: low_key_and_private
+240: socially_outgoing
+241: scene_connected
+242: guarded_or_hard_to_read
+243: affectionate_and_warm
+244: inconsistent_or_mixed_signals
+245: relationship_ready
+246: still_figuring_things_out
+247: markers:
+248: romantic_pattern_marker
+249: pattern_risk_marker
+250: scene_alignment_marker
+252: Q2.2 — What Actually Worked
+253: type: multi_select
+id: worked_in_past
+254: prompt:
+“Which kinds of people have actually worked best for you?”
+255: selection_rule:
+Pick up to 5.
+256: options:
+257: emotionally_available
+258: calm_and_grounded
+259: consistent_and_reliable
+260: communicative
+261: affectionate_and_warm
+262: relationship_ready
+263: emotionally_mature
+264: aligned_on_values
+265: easy_to_be_with
+266: strong_chemistry
+267: supportive_of_my_goals
+268: safe_to_be_myself
+269: markers:
+270: emotional_safety_marker
+271: growth_alignment_marker
+273: Q2.3 — Exciting but Didn’t Last
+274: type: multi_select
+id: didnt_last_pattern
+275: prompt:
+“Which patterns have felt exciting but usually didn’t last?”
+276: selection_rule:
+Pick up to 5.
+277: options:
+278: emotionally_unavailable
+279: inconsistent_or_mixed_signals
+280: intense_fast_start
+281: strong_chemistry_but_unstable
+282: guarded_or_avoidant
+283: chaotic_or_unpredictable
+284: overly_independent
+285: attractive_but_misaligned
+286: fun_but_not_serious
+287: visibility_or_openness_mismatch
+288: confusing_intensity_with_security
+289: potential_over_reality
+290: markers:
+291: pattern_risk_marker
+292: emotional_safety_marker
+293: visibility_alignment_marker
+295: Q2.4 — Closeness Pattern
+296: type: single_select
+id: closeness_pattern
+297: prompt:
+“When you start liking someone, what feels most familiar?”
+298: options:
+299: steady_and_open
+300: wanting_reassurance_quickly
+301: holding_back_to_protect_myself
+302: wanting_closeness_then_feeling_overwhelmed
+303: chemistry_first_clarity_later
+304: taking_time_to_trust
+305: markers:
+306: attachment_marker
+307: emotional_pacing_marker
+309: Q2.5 — Conflict Response
+310: type: single_select
+id: conflict_response
+311: prompt:
+“When tension comes up, I usually…”
+312: options:
+313: address_it_directly
+314: need_time_then_talk
+315: avoid_it_and_hope_it_passes
+316: become_emotional
+317: go_quiet_and_withdraw
+318: try_to_keep_the_peace
+319: markers:
+320: conflict_style_marker
+322: Q2.6 — Conflict Repair
+323: type: slider_set
+id: conflict_repair_skills
+324: prompt:
+“How do you usually repair after tension?”
+325: axes:
+326: apologising_when_i_am_wrong
+327: hearing_feedback_without_shutting_down
+328: staying_respectful_when_hurt
+329: maintaining_boundaries_without_becoming_cold
+330: learning_from_conflict
+331: markers:
+332: repair_marker
+333: emotional_maturity_marker
+335: Q2.7 — Emotional Safety & Support
+336: type: slider_set
+id: emotional_safety_support
+337: prompt:
+“What helps a relationship feel emotionally safe for you?”
+338: axes:
+339: expressing_needs_without_judgment
+340: feeling_understood_and_validated
+341: supporting_each_other_through_stress
+342: handling_sensitive_topics_with_care
+343: calm_repair_after_difficult_moments
+344: markers:
+345: emotional_safety_marker
+346: support_needs_marker
+348: Q2.8 — Humour & Resilience
+349: type: single_select
+id: humour_resilience
+350: prompt:
+“What role does humour play when things get difficult?”
+351: options:
+352: shared_laughter_helps_me_reconnect
+353: especially_helpful_during_stress
+354: nice_but_not_essential
+355: i_prefer_calm_seriousness
+356: depends_on_the_person
+357: markers:
+358: humour_resilience_marker
+360: Q2.9 — Pattern Awareness
+361: type: multi_select
+id: relationship_challenge_pattern
+362: prompt:
+“In dating, what tends to be hardest for you?”
+363: options:
+364: being_fully_myself
+365: communicating_through_problems
+366: maintaining_boundaries
+367: repeating_the_same_pattern
+368: choosing_unavailable_people
+369: moving_too_fast
+370: struggling_to_open_up
+371: avoiding_difficult_conversations
+372: focusing_on_potential_over_reality
+373: confusing_chemistry_with_compatibility
+374: people_pleasing
+375: losing_interest_when_it_becomes_real
+376: different_levels_of_visibility_or_openness
+377: scene_or_non_scene_mismatch
+378: markers:
+379: pattern_risk_marker
+380: visibility_alignment_marker
+381: scene_alignment_marker
+383: Q2.10 — Romantic Pattern Flexibility
+384: type: slider
+id: romantic_pattern_flexibility
+385: prompt:
+“How open are you to dating outside your usual pattern?”
+386: scale:
+0 = my past patterns strongly shape what works
+0.5 = some patterns matter but I am open
+1 = very open to something different
+387: markers:
+388: romantic_pattern_flexibility_marker
+390: SECTION 3 — INTENT & VALUES
+391: Q3.1 — Relationship Intent
+392: type: single_select
+id: relationship_intent
+393: prompt:
+“What are you looking for right now?”
+394: options:
+395: long_term_partner
+396: serious_relationship
+397: open_to_seeing_where_it_goes
+398: casual_but_meaningful
+399: casual_and_low_pressure
+400: markers:
+401: intent_marker
+403: Q3.2 — Relationship Readiness
+404: type: single_select
+id: relationship_readiness
+405: prompt:
+“How ready do you feel for a relationship right now?”
+406: options:
+407: fully_ready
+408: mostly_ready
+409: unsure_but_open
+410: wanting_connection_without_full_commitment
+411: rebuilding_after_past_experiences
+412: markers:
+413: readiness_marker
+415: Q3.3 — Core Relationship Need
+416: type: single_select
+id: core_relationship_need
+417: prompt:
+“What do you most need from a relationship right now?”
+418: options:
+419: stability
+420: enjoyment
+421: care
+422: deep_understanding
+423: growth
+424: exploration
+425: emotional_safety
+426: markers:
+427: core_need_marker
+429: Q3.4 — Core Values
+430: type: multi_select
+id: core_values
+431: prompt:
+“Which relationship values matter most to you?”
+432: selection_rule:
+Pick up to 6.
+433: options:
+434: emotional_stability
+435: ambition
+436: independence
+437: affection
+438: consistency
+439: fun_and_adventure
+440: loyalty
+441: growth
+442: family
+443: confidence
+444: humour
+445: calm
+446: reliability
+447: emotional_maturity
+448: openness
+449: kindness
+450: markers:
+451: values_marker
+453: Q3.5 — Values, Worldview & Meaning
+454: type: slider_set
+id: worldview_values_alignment
+455: prompt:
+“How important is alignment on these deeper areas?”
+456: axes:
+457: core_beliefs_and_values
+458: life_goals_and_direction
+459: spiritual_or_personal_outlook
+460: openness_to_deeper_conversations
+461: shared_meaning_and_purpose
+462: markers:
+463: worldview_marker
+465: Q3.6 — Future Alignment Topics
+466: type: multi_select
+id: future_alignment_topics
+467: prompt:
+“Which future topics matter most to align on?”
+468: options:
+469: marriage
+470: children_or_family_building
+471: where_to_live
+472: career_ambition
+473: finances
+474: religion_or_spirituality
+475: family_closeness
+476: relationship_structure
+477: community_or_visibility
+478: lifestyle_priorities
+479: markers:
+480: future_alignment_marker
+481: visibility_alignment_marker
+483: Q3.7 — Future Direction & Adaptability
+484: type: slider_set
+id: future_direction_adaptability
+485: prompt:
+“What matters most when building a future with someone?”
+486: axes:
+487: moving_toward_shared_goals
+488: compromising_without_losing_myself
+489: reassessing_the_future_openly
+490: handling_obstacles_as_a_team
+491: supporting_each_others_direction
+492: markers:
+493: adaptability_marker
+495: Q3.8 — Ambition & Mutual Support
+496: type: single_select
+id: ambition_support_style
+497: prompt:
+“Which dynamic around ambition feels healthiest to you?”
+498: options:
+499: encouraging_each_others_goals
+500: supporting_each_other_with_independence
+501: taking_turns_prioritising_careers
+502: needing_a_similar_pace
+503: still_figuring_out_balance
+504: markers:
+505: ambition_support_marker
+507: Q3.9 — Relationship Structure & Star Sign Lens
+508: type: single_select
+id: relationship_structure_and_zodiac_lens
+509: prompt:
+“Which best describes how you think about relationship structure and lighter compatibility signals?”
+510: options:
+511: monogamous_star_signs_for_fun
+512: monogamous_interested_in_star_signs
+513: open_or_flexible_star_signs_for_fun
+514: open_or_flexible_interested_in_star_signs
+515: unsure_but_open_to_discussing_structure
+516: do_not_use_star_signs
+517: markers:
+518: relationship_structure_marker
+519: zodiac_lens_marker
+521: Q3.10 — Intent & Values Flexibility
+522: type: slider
+id: intent_values_flexibility
+523: prompt:
+“How flexible are you overall on intent, values, and future fit?”
+524: scale:
+0 = very specific
+0.5 = somewhat flexible
+1 = open on some things
+525: markers:
+526: intent_values_flexibility_marker
+528: SECTION 4 — LIFESTYLE & SOCIAL FIT
+529: Q4.1 — Lifestyle Identity
+530: type: multi_select
+id: lifestyle_identity
+531: prompt:
+“Which lifestyle patterns feel most like you?”
+532: options:
+533: social_and_outgoing
+534: low_key_and_private
+535: routine_oriented
+536: spontaneous
+537: scene_connected
+538: non_scene
+539: saver
+540: spender
+541: career_first
+542: balance_first
+543: planner
+544: flexible
+545: wellness_focused
+546: nightlife_oriented
+547: culture_or_creativity_led
+548: markers:
+549: lifestyle_marker
+550: social_fit_marker
+551: scene_alignment_marker
+553: Q4.2 — Ideal Weekend & Shared Activities
+554: type: multi_select
+id: ideal_weekend_shared_activities
+555: prompt:
+“What kind of shared time would help a relationship feel alive?”
+556: selection_rule:
+Pick up to 5.
+557: options:
+558: food_and_restaurants
+559: fitness_or_sport
+560: travel_or_weekends_away
+561: culture_and_events
+562: nightlife
+563: home_comfort
+564: deeper_conversations
+565: creative_projects
+566: nature_and_outdoors
+567: shared_friend_groups
+568: family_time
+569: quiet_routine_together
+570: markers:
+571: shared_interests_marker
+573: Q4.3 — Personality & Daily Rhythm
+574: type: slider_set
+id: personality_daily_rhythm
+575: prompt:
+“Where do you naturally sit on these?”
+576: axes:
+577: social ↔ private
+578: spontaneous ↔ planned
+579: emotional ↔ practical
+580: curious ↔ grounded
+581: organised ↔ relaxed
+582: work_focused ↔ balance_first
+583: markers:
+584: personality_rhythm_marker
+586: Q4.4 — Friends, Family & Social Circles
+587: type: single_select
+id: friends_family_integration
+588: prompt:
+“How much do you want a partner involved with your friends and family?”
+589: options:
+590: very_involved
+591: gradually_integrated
+592: separate_but_respectful
+593: depends_on_the_relationship
+594: not_a_major_factor
+595: markers:
+596: social_fit_marker
+597: visibility_alignment_marker
+599: Q4.5 — Everyday Ease & Humour
+600: type: single_select
+id: everyday_ease_humour
+601: prompt:
+“What role does everyday ease and humour play for you?”
+602: options:
+603: shared_laughter_feels_important
+604: especially_helpful_during_stress
+605: nice_but_not_essential
+606: i_prefer_calm_seriousness
+607: depends_on_the_person
+608: markers:
+609: humour_resilience_marker
+611: Q4.6 — Home & Daily Responsibility
+612: type: slider_set
+id: household_responsibility_fit
+613: prompt:
+“How important is alignment on home and daily responsibility?”
+614: axes:
+615: cleanliness_and_organisation
+616: sharing_responsibilities_fairly
+617: discussing_expectations_openly
+618: adapting_when_life_changes
+619: appreciating_everyday_effort
+620: markers:
+621: household_marker
+623: Q4.7 — Communication Style
+624: type: multi_select
+id: communication_style
+625: prompt:
+“How do you naturally communicate interest?”
+626: options:
+627: frequent_messages
+628: steady_not_constant
+629: more_in_person_than_text
+630: playful_and_flirty
+631: thoughtful_and_deeper
+632: practical_check_ins
+633: affectionate_reassurance
+634: space_then_reconnection
+635: markers:
+636: communication_style_marker
+638: Q4.8 — Social Difference Tolerance
+639: type: multi_select
+id: social_difference_tolerance
+640: prompt:
+“Which social differences could you comfortably work with?”
+641: options:
+642: different_social_energy
+643: different_friendship_groups
+644: different_family_closeness
+645: different_nightlife_preferences
+646: different_public_affection_comfort
+647: different_alone_time_needs
+648: different_travel_or_adventure_needs
+649: different_work_intensity
+650: different_scene_or_non_scene_preferences
+651: markers:
+652: social_difference_tolerance_marker
+653: practical_compatibility_marker
+655: Q4.9 — Support Under Stress
+656: type: single_select
+id: support_under_stress
+657: prompt:
+“When you are stressed or unwell, what support usually helps most?”
+658: options:
+659: comfort_and_reassurance
+660: practical_help
+661: space_then_support
+662: humour_and_lightness
+663: direct_problem_solving
+664: quiet_presence
+665: markers:
+666: support_style_marker
+668: Q4.10 — Lifestyle & Social Flexibility
+669: type: slider
+id: lifestyle_social_flexibility
+670: prompt:
+“How flexible are you on lifestyle, social rhythm, and day-to-day fit?”
+671: scale:
+0 = I need close alignment
+0.5 = somewhat flexible
+1 = open if the connection works well
+672: markers:
+673: lifestyle_social_flexibility_marker
+675: SECTION 5 — FIRST IMPRESSION & VIBE
+676: Q5.1 — Natural Energy
+677: type: multi_select
+id: self_energy_markers
+678: prompt:
+“What kind of energy do you naturally give off?”
+679: options:
+680: polished
+681: relaxed
+682: creative
+683: professional
+684: sporty
+685: warm
+686: understated
+687: confident
+688: playful
+689: reserved
+690: intense
+691: gentle
+692: markers:
+693: self_energy_marker
+694: first_impression_marker
+696: Q5.2 — Intended First Impression
+697: type: multi_select
+id: intended_impression_markers
+698: prompt:
+“What first impression do you want to give?”
+699: selection_rule:
+Pick up to 5.
+700: options:
+701: attractive
+702: approachable
+703: high_quality
+704: fun
+705: serious_about_dating
+706: warm
+707: confident
+708: emotionally_available
+709: stylish
+710: grounded
+711: interesting
+712: safe_to_be_around
+713: markers:
+714: desired_impression_marker
+716: Q5.3 — Energy You’re Drawn To
+717: type: multi_select
+id: energy_vibe_pref
+718: prompt:
+“What kind of energy are you usually drawn to?”
+719: options:
+720: polished
+721: relaxed
+722: creative
+723: grounded
+724: confident
+725: soft
+726: high_energy
+727: understated
+728: emotionally_open
+729: playful
+730: intellectually_curious
+731: calm
+732: markers:
+733: energy_vibe_marker
+735: Q5.4 — First Date Chemistry Signals
+736: type: multi_select
+id: first_date_chemistry_signals
+737: prompt:
+“On a first date, what usually tells you there could be chemistry?”
+738: selection_rule:
+Pick up to 5.
+739: options:
+740: easy_laughter
+741: natural_conversation
+742: strong_eye_contact
+743: physical_presence
+744: shared_values_coming_through
+745: mutual_flirting
+746: comfortable_silences
+747: emotional_openness
+748: similar_humour
+749: feeling_calm_and_interested
+750: feeling_authentic
+751: real_curiosity
+752: markers:
+753: first_date_chemistry_marker
+755: Q5.5 — Sexual Role
+756: type: single_select
+id: sexual_role
+757: prompt:
+“What feels most natural for you sexually?”
+758: microcopy:
+“Private and only used to improve compatibility.”
+759: options:
+760: top
+761: bottom
+762: versatile
+763: side
+764: flexible_depends_on_chemistry
+765: still_figuring_it_out
+766: markers:
+767: sexual_style_marker
+768: sexual_dynamic_marker
+769: Important:
+This remains:
+770: private
+771: compatibility-only
+772: never publicly displayed
+774: Q5.6 — Sexual Dynamic Preference
+775: type: single_select
+id: sexual_dynamic_preference
+776: prompt:
+“What dynamic usually works best for you?”
+777: microcopy:
+“Private and only used to improve compatibility.”
+778: options:
+779: complementary_dynamic
+780: another_versatile_person
+781: flexible_depends_on_connection
+782: emotional_chemistry_first
+783: slower_intimacy_first
+784: still_figuring_it_out
+785: markers:
+786: sexual_dynamic_marker
+788: Q5.7 — What Makes Intimacy Feel Satisfying
+789: type: multi_select
+id: sexual_satisfaction_drivers
+790: prompt:
+“What makes intimacy feel satisfying for you?”
+791: selection_rule:
+Pick up to 5.
+792: options:
+793: strong_chemistry
+794: emotional_safety
+795: feeling_desired
+796: clear_communication
+797: playfulness
+798: physical_confidence
+799: affection_before_and_after
+800: openness_and_exploration
+801: consistency
+802: feeling_present
+803: trust
+804: tenderness
+805: markers:
+806: sexual_satisfaction_marker
+808: Q5.8 — Sexual Communication & Consent
+809: type: slider_set
+id: sexual_communication_consent
+810: prompt:
+“How true do these feel for you?”
+811: microcopy:
+“Private and only used to improve compatibility.”
+812: axes:
+813: expressing_what_i_need
+814: speaking_up_when_something_feels_off
+815: discussing_sex_comfortably
+816: openness_to_new_things
+817: respecting_turn_ons_and_turn_offs
+818: markers:
+819: sexual_communication_marker
+821: Q5.9 — Desire, Boundaries & Turn-Ons
+822: type: multi_select
+id: desire_boundaries_turnons
+823: prompt:
+“What should compatibility quietly respect around intimacy?”
+824: microcopy:
+“Private and only used to improve match fit.”
+825: selection_rule:
+Pick up to 5.
+826: options:
+827: emotional_safety_matters_first
+828: open_conversations_matter
+829: playful_flirting_matters
+830: trust_makes_exploration_easier
+831: preferring_a_steady_rhythm
+832: clear_boundaries_matter
+833: openness_about_desires_feels_healthy
+834: preferring_privacy_until_trust_builds
+835: public_flirting_matters
+836: body_confidence_and_comfort_matter
+837: sexual_health_awareness_matters
+838: sober_intimacy_matters
+839: comfort_around_substances_matters
+840: privacy_around_intimacy_matters
+841: markers:
+842: desire_boundary_marker
+843: emotional_safety_marker
+845: Q5.10 — Vibe & Intimacy Flexibility
+846: type: slider
+id: vibe_intimacy_flexibility
+847: prompt:
+“How flexible are you on chemistry, vibe, and intimacy fit?”
+848: scale:
+0 = very specific
+0.5 = somewhat flexible
+1 = very open
+849: markers:
+850: vibe_intimacy_flexibility_marker
+852: FINAL OUTPUT MARKERS
+853: Attraction & Type:
+854: attraction_marker
+855: face_aesthetic_marker
+856: facial_structure_marker
+857: grooming_marker
+858: facial_hair_marker
+859: hair_style_marker
+860: body_presence_marker
+861: style_marker
+862: masculine_presentation_marker
+863: visual_energy_marker
+864: realistic_type_marker
+865: aspirational_gap_marker
+866: attraction_flexibility_marker
+867: emotional_attraction_weight_marker
+868: Romantic Pattern:
+869: romantic_pattern_marker
+870: attachment_marker
+871: conflict_style_marker
+872: repair_marker
+873: emotional_safety_marker
+874: support_needs_marker
+875: humour_resilience_marker
+876: pattern_risk_marker
+877: growth_alignment_marker
+878: romantic_pattern_flexibility_marker
+879: visibility_alignment_marker
+880: emotional_pacing_marker
+881: scene_alignment_marker
+882: Intent & Values:
+883: intent_marker
+884: readiness_marker
+885: core_need_marker
+886: values_marker
+887: worldview_marker
+888: future_alignment_marker
+889: adaptability_marker
+890: ambition_support_marker
+891: relationship_structure_marker
+892: zodiac_lens_marker
+893: intent_values_flexibility_marker
+894: Lifestyle & Social Fit:
+895: lifestyle_marker
+896: social_fit_marker
+897: shared_interests_marker
+898: personality_rhythm_marker
+899: household_marker
+900: communication_style_marker
+901: support_style_marker
+902: social_difference_tolerance_marker
+903: practical_compatibility_marker
+904: lifestyle_social_flexibility_marker
+905: visibility_alignment_marker
+906: scene_alignment_marker
+907: First Impression & Vibe:
+908: first_impression_marker
+909: self_energy_marker
+910: desired_impression_marker
+911: energy_vibe_marker
+912: first_date_chemistry_marker
+913: sexual_style_marker
+914: sexual_dynamic_marker
+915: sexual_satisfaction_marker
+916: sexual_communication_marker
+917: desire_boundary_marker
+918: vibe_intimacy_flexibility_marker

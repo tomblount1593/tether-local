@@ -1,8 +1,8 @@
-import bisexualDocRaw from "../../.codex-doc-extract/bisexual.txt?raw";
-import gayDocRaw from "../../.codex-doc-extract/gay.txt?raw";
-import lesbianDocRaw from "../../.codex-doc-extract/lesbian.txt?raw";
-import straightDocRaw from "../../.codex-doc-extract/straight.txt?raw";
-import transNonbinaryDocRaw from "../../.codex-doc-extract/trans_nonbinary.txt?raw";
+import bisexualDocRaw from "@/content/compatibility-docs/bisexual.txt?raw";
+import gayDocRaw from "@/content/compatibility-docs/gay.txt?raw";
+import lesbianDocRaw from "@/content/compatibility-docs/lesbian.txt?raw";
+import straightDocRaw from "@/content/compatibility-docs/straight.txt?raw";
+import transNonbinaryDocRaw from "@/content/compatibility-docs/trans_nonbinary.txt?raw";
 
 const SECTION_DEFINITIONS = [
   {

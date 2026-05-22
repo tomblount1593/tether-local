@@ -4,6 +4,7 @@ import { useLocation, useNavigate, matchPath } from "react-router-dom";
 import { Copy, ExternalLink, GripVertical, RefreshCw, Search, Star, X } from "lucide-react";
 import { DEV_ROUTES, DEV_ROUTE_GROUP_ORDER, type DevRouteDef, type DevRouteGroupKey } from "@/constants/devRoutes";
 import { useTier } from "@/hooks/useTier";
+import { shouldEnableDevTools } from "@/components/dev/devToolsVisibility";
 
 const FAV_KEY = "tether_dev_route_favorites";
 const FAV_GROUP_ORDER_KEY = "tether_dev_route_favorite_group_order";
@@ -22,9 +23,6 @@ type ColorSet = {
   panelBorder: string;
   chipBg: string;
 };
-
-const isDevEnvironment = () =>
-  Boolean(import.meta.env.DEV || (typeof process !== "undefined" && process.env?.NODE_ENV === "development"));
 
 const getStoredStringArray = (key: string) => {
   if (typeof window === "undefined") return [];
@@ -297,6 +295,7 @@ export default function DevRouteSwitcher({ hideLauncher = false }: DevRouteSwitc
   const location = useLocation();
   const navigate = useNavigate();
   const { tier } = useTier();
+  const devToolsEnabled = shouldEnableDevTools(location.pathname);
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [activeTab, setActiveTab] = useState<TabKey>("all");
@@ -308,14 +307,14 @@ export default function DevRouteSwitcher({ hideLauncher = false }: DevRouteSwitc
   const [isMobile, setIsMobile] = useState<boolean>(() => typeof window !== "undefined" && window.innerWidth < 768);
 
   useEffect(() => {
-    if (!isDevEnvironment()) return;
+    if (!devToolsEnabled) return;
     const onResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, []);
+  }, [devToolsEnabled]);
 
   useEffect(() => {
-    if (!isDevEnvironment()) return;
+    if (!devToolsEnabled) return;
     const handler = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
@@ -324,14 +323,14 @@ export default function DevRouteSwitcher({ hideLauncher = false }: DevRouteSwitc
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, []);
+  }, [devToolsEnabled]);
 
   useEffect(() => {
-    if (!isDevEnvironment()) return;
+    if (!devToolsEnabled) return;
     const handleToggle = () => setOpen((prev) => !prev);
     window.addEventListener("tether-dev-toggle", handleToggle);
     return () => window.removeEventListener("tether-dev-toggle", handleToggle);
-  }, []);
+  }, [devToolsEnabled]);
 
   const routesWithResolved = useMemo<ResolvedDevRoute[]>(
     () =>
@@ -369,20 +368,20 @@ export default function DevRouteSwitcher({ hideLauncher = false }: DevRouteSwitc
   }, [favoriteRouteOrderByGroup, favoriteRoutesByGroup, orderedFavoriteGroupOrder]);
 
   useEffect(() => {
-    if (!isDevEnvironment()) return;
+    if (!devToolsEnabled) return;
     if (typeof window !== "undefined") {
       window.localStorage.setItem(FAV_KEY, JSON.stringify(favorites));
       window.localStorage.setItem(FAV_GROUP_ORDER_KEY, JSON.stringify(orderedFavoriteGroupOrder));
       window.localStorage.setItem(FAV_ROUTE_ORDER_KEY, JSON.stringify(orderedFavoriteRouteOrderByGroup));
     }
-  }, [favorites, orderedFavoriteGroupOrder, orderedFavoriteRouteOrderByGroup]);
+  }, [devToolsEnabled, favorites, orderedFavoriteGroupOrder, orderedFavoriteRouteOrderByGroup]);
 
   useEffect(() => {
-    if (!isDevEnvironment()) return;
+    if (!devToolsEnabled) return;
     if (typeof window !== "undefined") {
       window.localStorage.setItem(RECENT_KEY, JSON.stringify(recent));
     }
-  }, [recent]);
+  }, [devToolsEnabled, recent]);
 
   const filteredRoutes = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -509,7 +508,7 @@ export default function DevRouteSwitcher({ hideLauncher = false }: DevRouteSwitc
             chipBg: "#eef1eb",
           };
 
-  if (!isDevEnvironment()) return null;
+  if (!devToolsEnabled) return null;
 
   return (
     <>

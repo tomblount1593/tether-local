@@ -15,6 +15,7 @@ import EducationField from "@/components/onboarding/EducationField";
 import OnboardingSelectField from "@/components/onboarding/OnboardingSelectField";
 import OnboardingMultiSelectField from "@/components/onboarding/OnboardingMultiSelectField";
 import DevPill from "@/components/dev/DevPill";
+import { shouldEnableDevTools } from "@/components/dev/devToolsVisibility";
 import TetherIntroLayout from "@/components/TetherIntroLayout";
 import HowTetherWorksFlow from "@/components/HowTetherWorksFlow";
 import { HOW_TETHER_WORKS_PAGES } from "@/data/howTetherWorksPages";
@@ -967,7 +968,7 @@ export default function Onboarding() {
     progressActive = setupProgressStages.indexOf(stage) + 1;
   }
   const showProgress = progressTotal > 0;
-  const isDev = Boolean(import.meta.env.DEV);
+  const isDev = shouldEnableDevTools(location.pathname);
 
   if (stage === "welcome") {
     return (

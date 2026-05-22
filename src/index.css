@@ -1019,14 +1019,14 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
-  padding-top: max(env(safe-area-inset-top), 24px);
-  padding-bottom: max(env(safe-area-inset-bottom), 24px);
-  padding-inline: clamp(28px, 7vw, 44px);
+  padding-top: max(env(safe-area-inset-top), 26px);
+  padding-bottom: max(env(safe-area-inset-bottom), 26px);
+  padding-inline: clamp(28px, 7vw, 40px);
 }
 
 .intro-stack {
   width: 100%;
-  max-width: 420px;
+  max-width: 446px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -1042,13 +1042,13 @@
 }
 
 .logo-icon {
-  width: clamp(112px, 29vw, 142px);
+  width: clamp(118px, 30vw, 146px);
   height: auto;
   margin-inline: auto;
 }
 
 .tether-wordmark {
-  width: clamp(250px, 64vw, 330px);
+  width: clamp(270px, 69vw, 348px);
   height: auto;
   margin-inline: auto;
   margin-top: var(--space-icon-wordmark);
@@ -1057,8 +1057,8 @@
 .hero-copy {
   margin-top: var(--space-wordmark-hero);
   font-family: var(--font-heading);
-  font-size: clamp(29px, 7.2vw, 39px);
-  line-height: 1.18;
+  font-size: clamp(29px, 7vw, 38px);
+  line-height: 1.16;
   letter-spacing: -0.01em;
   text-align: center;
   color: var(--theme-primary);
@@ -1072,7 +1072,7 @@
 }
 
 .intro-divider {
-  width: min(76%, 340px);
+  width: min(78%, 344px);
   height: 1px;
   margin-top: var(--gap-hero-divider);
   margin-bottom: var(--gap-divider-body);
@@ -1082,11 +1082,11 @@
 
 .body-copy {
   font-family: var(--font-body);
-  font-size: clamp(18px, 4.7vw, 22px);
-  line-height: 1.62;
+  font-size: clamp(17px, 4.25vw, 20px);
+  line-height: 1.52;
   text-align: center;
   color: var(--theme-secondary);
-  max-width: 390px;
+  max-width: 364px;
   margin-inline: auto;
 }
 
@@ -1096,14 +1096,19 @@
 
 .emphasis-line {
   margin-top: var(--gap-body-emphasis);
-  font-family: var(--font-body);
-  font-size: clamp(18px, 4.45vw, 21px);
-  line-height: 1.25;
+  display: block;
+  margin-inline: auto;
+  width: 100%;
+  max-width: min(100%, 308px);
+  font-family: var(--font-heading);
+  font-size: clamp(23px, 5.9vw, 29px);
+  line-height: 1.14;
   font-weight: 700;
+  letter-spacing: -0.01em;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
+  text-wrap: balance;
   color: var(--theme-primary);
-  max-width: 100%;
 }
 
 .intro-action-zone {
@@ -1115,7 +1120,7 @@
 
 .primary-cta {
   width: 100%;
-  max-width: 360px;
+  max-width: 338px;
   height: clamp(58px, 7.2vh, 68px);
   border-radius: 999px;
   margin-inline: auto;
@@ -2347,37 +2352,36 @@
 
 @media (max-width: 360px) {
   .emphasis-line {
-    font-size: 17px;
-    white-space: normal;
+    max-width: 100%;
   }
 }
 
 @media (max-height: 720px) {
   .intro-stack {
     --gap-hero-divider: clamp(20px, 3vh, 30px);
-    --gap-body-emphasis: clamp(28px, 4vh, 40px);
+    --gap-body-emphasis: clamp(22px, 3.2vh, 30px);
     --gap-cta-signin: clamp(16px, 2.2vh, 22px);
   }
 
   .logo-icon {
-    width: clamp(86px, 24vw, 104px);
+    width: clamp(90px, 24vw, 108px);
   }
 
   .tether-wordmark {
-    width: clamp(218px, 58vw, 270px);
+    width: clamp(228px, 60vw, 284px);
   }
 
   .hero-copy {
-    font-size: clamp(25px, 6.6vw, 32px);
+    font-size: clamp(25px, 6.2vw, 31px);
   }
 
   .body-copy {
-    font-size: clamp(15px, 4vw, 18px);
-    line-height: 1.5;
+    font-size: clamp(14px, 3.8vw, 17px);
+    line-height: 1.46;
   }
 
   .emphasis-line {
-    font-size: clamp(16px, 4.1vw, 18px);
+    font-size: clamp(21px, 5.6vw, 25px);
   }
 
   .primary-cta {

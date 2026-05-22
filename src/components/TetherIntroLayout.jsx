@@ -51,13 +51,13 @@ export default function TetherIntroLayout({ tier = "standard", onStart, onSignIn
       <div
         className="intro-stack"
         style={{
-          ["--space-icon-wordmark"]: "clamp(28px, 3.7vh, 44px)",
-          ["--space-wordmark-hero"]: "clamp(28px, 4vh, 46px)",
-          ["--gap-hero-divider"]: "clamp(28px, 3.8vh, 42px)",
-          ["--gap-divider-body"]: "var(--gap-hero-divider)",
-          ["--gap-body-emphasis"]: "clamp(40px, 5.2vh, 58px)",
-          ["--gap-emphasis-cta"]: "var(--gap-body-emphasis)",
-          ["--gap-cta-signin"]: "clamp(22px, 2.8vh, 30px)",
+          ["--space-icon-wordmark"]: "clamp(30px, 3.9vh, 42px)",
+          ["--space-wordmark-hero"]: "clamp(34px, 4.3vh, 50px)",
+          ["--gap-hero-divider"]: "clamp(34px, 4.6vh, 50px)",
+          ["--gap-divider-body"]: "clamp(32px, 4.1vh, 42px)",
+          ["--gap-body-emphasis"]: "clamp(26px, 3.6vh, 34px)",
+          ["--gap-emphasis-cta"]: "clamp(28px, 4vh, 38px)",
+          ["--gap-cta-signin"]: "clamp(24px, 3vh, 30px)",
         }}
       >
         <section className="intro-brand-zone">

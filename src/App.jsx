@@ -37,6 +37,12 @@ import InterestedInYou from './pages/InterestedInYou';
 import OrientationWrapper from './components/OrientationWrapper';
 import DevRouteSwitcher from '@/components/dev/DevRouteSwitcher';
 import SignIn from './pages/SignIn';
+import { DEMO_VARIANT_ROUTE_CONFIGS } from '@/data/demo/demoVariantRoutes';
+
+const DEMO_ROUTE_VARIANTS = DEMO_VARIANT_ROUTE_CONFIGS.map(({ slug, orientation }) => ({
+  suffix: slug,
+  orientation,
+}));
 
 function ScrollToTopOnRouteChange() {
   const location = useLocation();
@@ -144,30 +150,20 @@ const AuthenticatedApp = () => {
         <Route path="/interested-in-you"         element={<InterestedInYou />} />
 
         {/* Secondary orientation pages */}
-        {[
-          { suffix: "gay",             orientation: "gay" },
-          { suffix: "straight",        orientation: "straight" },
-          { suffix: "bisexual",        orientation: "bisexual" },
-          { suffix: "lesbian",         orientation: "lesbian" },
-          { suffix: "trans-nonbinary", orientation: "trans_nonbinary" },
-          { suffix: "queer",           orientation: "bisexual" },
-          { suffix: "pansexual",       orientation: "bisexual" },
-          { suffix: "fluid",           orientation: "bisexual" },
-          { suffix: "open-preference", orientation: "bisexual" },
-        ].flatMap(({ suffix, orientation }) => [
-          <Route key={`chat-${suffix}`}           path={`/chat-${suffix}/:matchId`}             element={<OrientationWrapper orientation={orientation}><Chat /></OrientationWrapper>} />,
-          <Route key={`video-call-${suffix}`}     path={`/video-call-${suffix}/:matchId`}       element={<OrientationWrapper orientation={orientation}><VideoCall /></OrientationWrapper>} />,
-          <Route key={`match-${suffix}`}          path={`/match-${suffix}/:matchId`}            element={<OrientationWrapper orientation={orientation}><MatchDetail /></OrientationWrapper>} />,
-          <Route key={`book-date-${suffix}`}      path={`/book-date-${suffix}/:matchId`}        element={<OrientationWrapper orientation={orientation}><DateBooking /></OrientationWrapper>} />,
-          <Route key={`post-date-${suffix}`}      path={`/post-date-feedback-${suffix}/:bookingId`} element={<OrientationWrapper orientation={orientation}><PostDateFeedback /></OrientationWrapper>} />,
-          <Route key={`quick-reflection-${suffix}`} path={`/quick-reflection-${suffix}/:matchId`} element={<OrientationWrapper orientation={orientation}><QuickReflection /></OrientationWrapper>} />,
-          <Route key={`waiting-response-${suffix}`} path={`/waiting-response-${suffix}/:matchId`} element={<OrientationWrapper orientation={orientation}><WaitingResponse /></OrientationWrapper>} />,
-          <Route key={`book-next-date-${suffix}`} path={`/book-next-date-${suffix}/:matchId`} element={<OrientationWrapper orientation={orientation}><NextDateBooking /></OrientationWrapper>} />,
-          <Route key={`view-feedback-${suffix}`} path={`/view-feedback-${suffix}/:matchId`} element={<OrientationWrapper orientation={orientation}><ViewDateFeedback /></OrientationWrapper>} />,
-          <Route key={`private-chat-${suffix}`}   path={`/private-chat-${suffix}`}              element={<OrientationWrapper orientation={orientation}><PrivateChat /></OrientationWrapper>} />,
-          <Route key={`membership-${suffix}`}     path={`/membership-${suffix}`}                element={<OrientationWrapper orientation={orientation}><Membership /></OrientationWrapper>} />,
-          <Route key={`date-journey-${suffix}`}   path={`/date-journey-${suffix}`}          element={<OrientationWrapper orientation={orientation}><DateJourney /></OrientationWrapper>} />,
-          <Route key={`interested-${suffix}`}     path={`/interested-in-you-${suffix}`}     element={<OrientationWrapper orientation={orientation}><InterestedInYou /></OrientationWrapper>} />,
+        {DEMO_ROUTE_VARIANTS.flatMap(({ suffix, orientation }) => [
+          <Route key={`chat-${suffix}`}           path={`/chat-${suffix}/:matchId`}             element={<OrientationWrapper orientation={orientation} variant={suffix}><Chat /></OrientationWrapper>} />,
+          <Route key={`video-call-${suffix}`}     path={`/video-call-${suffix}/:matchId`}       element={<OrientationWrapper orientation={orientation} variant={suffix}><VideoCall /></OrientationWrapper>} />,
+          <Route key={`match-${suffix}`}          path={`/match-${suffix}/:matchId`}            element={<OrientationWrapper orientation={orientation} variant={suffix}><MatchDetail /></OrientationWrapper>} />,
+          <Route key={`book-date-${suffix}`}      path={`/book-date-${suffix}/:matchId`}        element={<OrientationWrapper orientation={orientation} variant={suffix}><DateBooking /></OrientationWrapper>} />,
+          <Route key={`post-date-${suffix}`}      path={`/post-date-feedback-${suffix}/:bookingId`} element={<OrientationWrapper orientation={orientation} variant={suffix}><PostDateFeedback /></OrientationWrapper>} />,
+          <Route key={`quick-reflection-${suffix}`} path={`/quick-reflection-${suffix}/:matchId`} element={<OrientationWrapper orientation={orientation} variant={suffix}><QuickReflection /></OrientationWrapper>} />,
+          <Route key={`waiting-response-${suffix}`} path={`/waiting-response-${suffix}/:matchId`} element={<OrientationWrapper orientation={orientation} variant={suffix}><WaitingResponse /></OrientationWrapper>} />,
+          <Route key={`book-next-date-${suffix}`} path={`/book-next-date-${suffix}/:matchId`} element={<OrientationWrapper orientation={orientation} variant={suffix}><NextDateBooking /></OrientationWrapper>} />,
+          <Route key={`view-feedback-${suffix}`} path={`/view-feedback-${suffix}/:matchId`} element={<OrientationWrapper orientation={orientation} variant={suffix}><ViewDateFeedback /></OrientationWrapper>} />,
+          <Route key={`private-chat-${suffix}`}   path={`/private-chat-${suffix}`}              element={<OrientationWrapper orientation={orientation} variant={suffix}><PrivateChat /></OrientationWrapper>} />,
+          <Route key={`membership-${suffix}`}     path={`/membership-${suffix}`}                element={<OrientationWrapper orientation={orientation} variant={suffix}><Membership /></OrientationWrapper>} />,
+          <Route key={`date-journey-${suffix}`}   path={`/date-journey-${suffix}`}          element={<OrientationWrapper orientation={orientation} variant={suffix}><DateJourney /></OrientationWrapper>} />,
+          <Route key={`interested-${suffix}`}     path={`/interested-in-you-${suffix}`}     element={<OrientationWrapper orientation={orientation} variant={suffix}><InterestedInYou /></OrientationWrapper>} />,
         ])}
 
         {/* ── Primary pages WITH AppLayout (bottom nav) ───────────────────── */}
@@ -183,25 +179,15 @@ const AuthenticatedApp = () => {
           <Route path="/profile"      element={<Profile />} />
 
           {/* Sexual-preference primary routes */}
-          {[
-          { suffix: "gay",             orientation: "gay" },
-          { suffix: "straight",        orientation: "straight" },
-          { suffix: "bisexual",        orientation: "bisexual" },
-          { suffix: "lesbian",         orientation: "lesbian" },
-          { suffix: "trans-nonbinary", orientation: "trans_nonbinary" },
-          { suffix: "queer",           orientation: "bisexual" },
-          { suffix: "pansexual",       orientation: "bisexual" },
-          { suffix: "fluid",           orientation: "bisexual" },
-          { suffix: "open-preference", orientation: "bisexual" },
-        ].flatMap(({ suffix, orientation }) => [
-            <Route key={`app-${suffix}`}           path={`/app-${suffix}`}              element={<OrientationWrapper orientation={orientation}><Discover /></OrientationWrapper>} />,
-            <Route key={`discover-${suffix}`}      path={`/discover-${suffix}`}         element={<OrientationWrapper orientation={orientation}><Discover /></OrientationWrapper>} />,
-            <Route key={`matches-${suffix}`}       path={`/matches-${suffix}`}          element={<OrientationWrapper orientation={orientation}><Matches /></OrientationWrapper>} />,
-            <Route key={`conversations-${suffix}`} path={`/conversations-${suffix}`}    element={<OrientationWrapper orientation={orientation}><Conversations /></OrientationWrapper>} />,
-            <Route key={`map-${suffix}`}           path={`/map-${suffix}`}              element={<OrientationWrapper orientation={orientation}><MapDiscovery /></OrientationWrapper>} />,
-            <Route key={`expert-${suffix}`}        path={`/expert-${suffix}`}           element={<OrientationWrapper orientation={orientation}><ExpertChat /></OrientationWrapper>} />,
-            <Route key={`insights-${suffix}`}      path={`/insights-${suffix}`}         element={<OrientationWrapper orientation={orientation}><Insights /></OrientationWrapper>} />,
-            <Route key={`profile-${suffix}`}       path={`/profile-${suffix}`}          element={<OrientationWrapper orientation={orientation}><Profile /></OrientationWrapper>} />,
+          {DEMO_ROUTE_VARIANTS.flatMap(({ suffix, orientation }) => [
+            <Route key={`app-${suffix}`}           path={`/app-${suffix}`}              element={<OrientationWrapper orientation={orientation} variant={suffix}><Discover /></OrientationWrapper>} />,
+            <Route key={`discover-${suffix}`}      path={`/discover-${suffix}`}         element={<OrientationWrapper orientation={orientation} variant={suffix}><Discover /></OrientationWrapper>} />,
+            <Route key={`matches-${suffix}`}       path={`/matches-${suffix}`}          element={<OrientationWrapper orientation={orientation} variant={suffix}><Matches /></OrientationWrapper>} />,
+            <Route key={`conversations-${suffix}`} path={`/conversations-${suffix}`}    element={<OrientationWrapper orientation={orientation} variant={suffix}><Conversations /></OrientationWrapper>} />,
+            <Route key={`map-${suffix}`}           path={`/map-${suffix}`}              element={<OrientationWrapper orientation={orientation} variant={suffix}><MapDiscovery /></OrientationWrapper>} />,
+            <Route key={`expert-${suffix}`}        path={`/expert-${suffix}`}           element={<OrientationWrapper orientation={orientation} variant={suffix}><ExpertChat /></OrientationWrapper>} />,
+            <Route key={`insights-${suffix}`}      path={`/insights-${suffix}`}         element={<OrientationWrapper orientation={orientation} variant={suffix}><Insights /></OrientationWrapper>} />,
+            <Route key={`profile-${suffix}`}       path={`/profile-${suffix}`}          element={<OrientationWrapper orientation={orientation} variant={suffix}><Profile /></OrientationWrapper>} />,
           ])}
         </Route>
 

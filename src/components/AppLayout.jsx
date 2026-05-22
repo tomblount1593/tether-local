@@ -3,14 +3,14 @@ import { Heart, MessageCircle, User, Sparkles, Map, BarChart2, Crown } from "luc
 import MembershipBanner from "./MembershipBanner";
 import { useTier } from "../hooks/useTier";
 import { getMembershipTheme } from "@/brand/membershipTheme";
+import { DEMO_VARIANT_ROUTE_SLUGS } from "@/data/demo/demoVariantRoutes";
 
 export default function AppLayout() {
   const location = useLocation();
   const { tier, tierData } = useTier();
 
   // Detect orientation suffix from current path (e.g. "-gay", "-lesbian", etc.)
-  const ORIENTATIONS = ["gay", "straight", "bisexual", "lesbian", "trans-nonbinary", "queer", "pansexual", "fluid", "open-preference"];
-  const currentOrientation = ORIENTATIONS.find(o =>
+  const currentOrientation = DEMO_VARIANT_ROUTE_SLUGS.find(o =>
     location.pathname === `/${o}` ||
     location.pathname.startsWith(`/app-${o}`) ||
     location.pathname.includes(`-${o}`)

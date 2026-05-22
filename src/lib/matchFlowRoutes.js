@@ -1,4 +1,16 @@
-const ORIENTATION_SLUGS = ["trans-nonbinary", "straight", "bisexual", "lesbian", "gay", "queer", "pansexual", "fluid", "open-preference"];
+const ORIENTATION_SLUGS = [
+  "trans-nonbinary",
+  "non-binary",
+  "pansexual",
+  "open-preference",
+  "straight",
+  "bisexual",
+  "lesbian",
+  "queer",
+  "fluid",
+  "trans",
+  "gay",
+];
 
 export function normalizeOrientation(value = "") {
   const normalized = String(value || "").trim().toLowerCase().replace(/_/g, "-");
@@ -10,6 +22,9 @@ export function getOrientationSuffix(pathname = "", orientation = "") {
   const currentPath = String(pathname || "");
   const pathMatch = ORIENTATION_SLUGS.find((slug) => currentPath.includes(`-${slug}`));
   if (pathMatch) return `-${pathMatch}`;
+
+  const explicitOrientation = String(orientation || "").trim().toLowerCase().replace(/_/g, "-");
+  if (ORIENTATION_SLUGS.includes(explicitOrientation)) return `-${explicitOrientation}`;
 
   const normalizedOrientation = normalizeOrientation(orientation);
   return normalizedOrientation ? `-${normalizedOrientation}` : "";

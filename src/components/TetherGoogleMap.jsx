@@ -10,18 +10,10 @@ import { getLocalStyleForTier } from "@/config/googleMapThemeStyles";
 import { getAreaForMatch, getMatchMapPosition, getUserMapPosition, LONDON_BOUNDS, LONDON_CENTER } from "@/data/demo/londonMapAreas";
 import { getBoundsForRadius, milesToMeters, splitMatchesByRadius } from "@/data/demo/mapRadiusUtils";
 import { getCompatibilityTone } from "@/lib/compatibilityTone";
+import { withOrientation } from "@/lib/matchFlowRoutes";
 
 function routeForMatch(pathname, matchId) {
-  if (pathname.includes("-gay")) return `/match-gay/${matchId}`;
-  if (pathname.includes("-straight")) return `/match-straight/${matchId}`;
-  if (pathname.includes("-queer")) return `/match-queer/${matchId}`;
-  if (pathname.includes("-pansexual")) return `/match-pansexual/${matchId}`;
-  if (pathname.includes("-fluid")) return `/match-fluid/${matchId}`;
-  if (pathname.includes("-open-preference")) return `/match-open-preference/${matchId}`;
-  if (pathname.includes("-bisexual")) return `/match-bisexual/${matchId}`;
-  if (pathname.includes("-lesbian")) return `/match-lesbian/${matchId}`;
-  if (pathname.includes("-trans-nonbinary")) return `/match-trans-nonbinary/${matchId}`;
-  return `/match/${matchId}`;
+  return `${withOrientation(pathname, "/match")}/${matchId}`;
 }
 
 function getMatchScore(match) {

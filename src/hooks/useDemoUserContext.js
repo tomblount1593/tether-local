@@ -1,8 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { getStoredDemoContext, saveDemoContext } from "@/data/demo/demoMatchPoolSelector";
 
 export function useDemoUserContext() {
+  const location = useLocation();
   const [context, setContextState] = useState(() => getStoredDemoContext(typeof window !== "undefined" ? window.location.pathname : ""));
+
+  useEffect(() => {
+    setContextState(getStoredDemoContext(location.pathname));
+  }, [location.pathname]);
 
   useEffect(() => {
     saveDemoContext(context);
@@ -14,4 +20,3 @@ export function useDemoUserContext() {
 
   return useMemo(() => ({ context, setContext }), [context]);
 }
-

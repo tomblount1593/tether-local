@@ -1,4 +1,5 @@
 import { photoManifest } from "@/data/demo/photoManifest";
+import { applyDemoVariantFromPathname, inferDemoVariantSlugFromPathname } from "@/data/demo/demoVariantRoutes";
 import { getRouteOrientationFromContext, normalizeGenderIdentity, normalizeSexualPreference } from "@/lib/compatibilityVariantRouting";
 
 const STORAGE_KEY = "tetherDemoUserContext";
@@ -52,6 +53,10 @@ export function getDeterministicSubset(items, count, seed) {
 }
 
 function inferOrientationFromPathname(pathname) {
+  const variantSlug = inferDemoVariantSlugFromPathname(pathname || "");
+  if (variantSlug === "trans" || variantSlug === "non-binary" || variantSlug === "trans-nonbinary") return "trans_nonbinary";
+  if (variantSlug === "queer" || variantSlug === "pansexual" || variantSlug === "fluid" || variantSlug === "open-preference") return "trans_nonbinary";
+  if (variantSlug) return variantSlug.replace(/-/g, "_");
   if (pathname.includes("trans-nonbinary")) return "trans_nonbinary";
   if (pathname.includes("lesbian")) return "lesbian";
   if (pathname.includes("open-preference")) return "bisexual";
@@ -65,6 +70,8 @@ function inferOrientationFromPathname(pathname) {
 }
 
 export function deriveContextFromRoute(pathname, existingContext = /** @type {Record<string, any>} */ ({})) {
+  const seeded = applyDemoVariantFromPathname(pathname, existingContext);
+  if (seeded.routeVariantSlug) return /** @type {Record<string, any>} */ (seeded);
   const ctx = /** @type {any} */ (existingContext);
   const inferred = inferOrientationFromPathname(pathname || "");
   if (!inferred) return existingContext;
@@ -95,11 +102,12 @@ export function getStoredDemoContext(pathname) {
     lookingFor: typeof window !== "undefined" ? (window.localStorage.getItem("tether_user_looking_for") || DEFAULT_DEMO_CONTEXT.lookingFor) : DEFAULT_DEMO_CONTEXT.lookingFor,
     routeOrientation: (inferred || orientation || "straight").replace(/-/g, "_"),
   };
-  if (typeof window === "undefined") return /** @type {Record<string, any>} */ (base);
+  if (typeof window === "undefined") return /** @type {Record<string, any>} */ (deriveContextFromRoute(pathname, base));
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return deriveContextFromRoute(pathname, base);
-    return deriveContextFromRoute(pathname, { ...base, ...JSON.parse(raw) });
+    const parsed = JSON.parse(raw);
+    return deriveContextFromRoute(pathname, { ...base, ...parsed });
   } catch {
     return deriveContextFromRoute(pathname, base);
   }

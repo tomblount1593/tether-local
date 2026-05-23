@@ -1322,11 +1322,11 @@ export default function Onboarding() {
 
             {/* COMPAT INTRO */}
             {stage === "compat_intro" && (
-              <div className="flex-1 flex flex-col items-center justify-center text-center gap-6 assessment-screen--centered" data-testid="assessment-intro-screen">
+              <div className="flex-1 flex flex-col items-center justify-center text-center gap-6 assessment-screen--centered assessment-intro-screen" data-testid="assessment-intro-screen">
                 <img src={membershipTheme.logo} alt={`${tier} Tether logo`} className="assessment-brand-logo" data-testid="assessment-logo" />
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: tierColors.bg }}>Compatibility Assessment</p>
-                  <h2 className="assessment-page-title mb-3" data-testid="assessment-page-title">Building your compatibility profile</h2>
+                <div className="assessment-intro-copy">
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-3 assessment-intro-kicker" style={{ color: tierColors.bg }}>Compatibility Assessment</p>
+                  <h2 className="assessment-page-title mb-3 assessment-intro-title" data-testid="assessment-page-title">Building your compatibility profile</h2>
                   <p className="assessment-body leading-relaxed max-w-sm">
                     Next, you'll complete a five-part assessment. This isn't a questionnaire — it's the system learning who you are, what you want, and who you're likely to connect with.
                   </p>
@@ -1344,7 +1344,7 @@ export default function Onboarding() {
                     </div>
                   ))}
                 </div>
-                <p className="assessment-microcopy">Takes about 5–7 minutes. The more you put in, the better your matches.</p>
+                <p className="assessment-microcopy assessment-intro-footnote">Takes about 5–7 minutes. The more you put in, the better your matches.</p>
               </div>
             )}
 
@@ -1427,7 +1427,7 @@ export default function Onboarding() {
 
         {/* Bottom navigation */}
         {["basics", "metrics", "photos", "prompts", "verification", "compat_intro"].includes(stage) && (
-          <div className="flex items-center gap-3 pt-4 pb-3">
+          <div className={`flex items-center gap-3 pt-4 pb-3 ${stage === "compat_intro" ? "assessment-intro-controls" : ""}`}>
             <Button variant="ghost" onClick={goBack} className="rounded-full text-sm">
               <ArrowLeft className="w-4 h-4 mr-1" /> Back
             </Button>

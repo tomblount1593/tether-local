@@ -510,6 +510,29 @@ select {
   text-align: center;
 }
 
+.assessment-intro-screen {
+  justify-content: space-between;
+  gap: clamp(14px, 2vh, 24px);
+  padding-block: clamp(4px, 1.2vh, 14px);
+}
+
+.assessment-intro-copy {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.2vh, 14px);
+}
+
+.assessment-intro-kicker,
+.assessment-intro-title,
+.assessment-intro-footnote {
+  margin-block: 0;
+}
+
+.assessment-intro-controls {
+  padding-top: clamp(8px, 1.2vh, 16px);
+  padding-bottom: clamp(8px, 1.2vh, 12px);
+}
+
 .onboarding-screen--verification {
   min-height: 100%;
   display: grid;
@@ -621,6 +644,58 @@ select {
   margin-top: clamp(8px, 1.2vh, 12px);
   border-top: 1px dashed var(--assessment-section-separator);
   opacity: 0.72;
+}
+
+@media (max-height: 880px) {
+  .assessment-intro-screen {
+    gap: clamp(12px, 1.6vh, 20px);
+    padding-block: clamp(2px, 0.8vh, 10px);
+  }
+
+  .assessment-intro-copy {
+    gap: clamp(6px, 1vh, 10px);
+  }
+
+  .assessment-section-list--reference {
+    gap: clamp(6px, 1vh, 10px);
+  }
+
+  .assessment-section-list--reference .assessment-section-separator {
+    margin-top: clamp(6px, 0.9vh, 10px);
+  }
+
+  .assessment-intro-controls {
+    padding-top: clamp(6px, 0.9vh, 12px);
+    padding-bottom: clamp(6px, 0.9vh, 10px);
+  }
+}
+
+@media (max-height: 780px) {
+  .assessment-intro-screen {
+    gap: 12px;
+    padding-block: 2px;
+  }
+
+  .assessment-intro-copy {
+    gap: 6px;
+  }
+
+  .assessment-section-list--reference {
+    gap: 5px;
+  }
+
+  .assessment-section-list--reference .assessment-section-row-content {
+    column-gap: clamp(16px, 4vw, 24px);
+  }
+
+  .assessment-section-list--reference .assessment-section-separator {
+    margin-top: 5px;
+  }
+
+  .assessment-intro-controls {
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
 }
 
 @media (max-width: 360px) {

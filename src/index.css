@@ -992,6 +992,11 @@ select {
   font-weight: 500;
 }
 
+.onboarding-written-input {
+  font-size: clamp(12px, 3vw, 14px);
+  line-height: 1.3;
+}
+
 .onboarding-control-subtitle {
   font-family: var(--font-body);
   font-size: clamp(11px, 2.7vw, 12px);

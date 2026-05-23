@@ -1270,7 +1270,7 @@ export default function OnboardingVariant({ orientation }) {
                 <div className="space-y-5">
                   <div>
                     <label className="app-section-title text-muted-foreground mb-1.5 block">First Name</label>
-                    <Input value={formData.display_name} onChange={e => update("display_name", e.target.value)} placeholder="Your first name" className={`onboarding-control rounded-xl h-9 ${formData.display_name ? "onboarding-control--completed" : ""}`} />
+                    <Input value={formData.display_name} onChange={e => update("display_name", e.target.value)} placeholder="Your first name" className={`onboarding-control onboarding-written-input rounded-xl h-9 ${formData.display_name ? "onboarding-control--completed" : ""}`} />
                   </div>
                   <div>
                     <label className="app-section-title text-muted-foreground mb-1.5 block">Date of Birth</label>
@@ -1352,7 +1352,7 @@ export default function OnboardingVariant({ orientation }) {
                     />
                     <div>
                       <label className="app-section-title text-muted-foreground mb-1.5 block">Work</label>
-                      <Input value={formData.work} onChange={e => update("work", e.target.value)} placeholder="Your work" className={`onboarding-control rounded-xl h-9 ${formData.work ? "onboarding-control--completed" : ""}`} />
+                      <Input value={formData.work} onChange={e => update("work", e.target.value)} placeholder="Your work" className={`onboarding-control onboarding-written-input rounded-xl h-9 ${formData.work ? "onboarding-control--completed" : ""}`} />
                     </div>
                   </div>
                   <div className="grid grid-cols-2 items-stretch gap-3">
@@ -1418,7 +1418,7 @@ export default function OnboardingVariant({ orientation }) {
                   />
                   <div>
                     <label className="app-section-title text-muted-foreground mb-1.5 block">Short Bio</label>
-                    <Textarea value={formData.bio} onChange={e => update("bio", e.target.value)} placeholder="A few words about you..." className={`onboarding-control rounded-xl resize-none ${formData.bio ? "onboarding-control--completed" : ""}`} rows={2} />
+                    <Textarea value={formData.bio} onChange={e => update("bio", e.target.value)} placeholder="A few words about you..." className={`onboarding-control onboarding-written-input rounded-xl resize-none ${formData.bio ? "onboarding-control--completed" : ""}`} rows={2} />
                   </div>
                   <div className="grid grid-cols-2 items-stretch gap-3">
                     <OnboardingSelectField
@@ -1593,7 +1593,7 @@ export default function OnboardingVariant({ orientation }) {
                   ].map(({ label, field, placeholder }) => (
                     <div key={field}>
                       <label className="app-section-title text-muted-foreground mb-1.5 block">{label}</label>
-                      <Textarea value={formData[field]} onChange={e => update(field, e.target.value)} placeholder={placeholder} className={`onboarding-control rounded-xl resize-none ${formData[field] ? "onboarding-control--completed" : ""}`} rows={2} />
+                      <Textarea value={formData[field]} onChange={e => update(field, e.target.value)} placeholder={placeholder} className={`onboarding-control onboarding-written-input rounded-xl resize-none ${formData[field] ? "onboarding-control--completed" : ""}`} rows={2} />
                     </div>
                   ))}
                   <OnboardingMultiSelectField

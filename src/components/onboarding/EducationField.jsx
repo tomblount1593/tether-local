@@ -67,7 +67,7 @@ export default function EducationField({
               value={institution}
               onChange={(event) => onChange({ level, institution: event.target.value })}
               placeholder="Type institution / location"
-              className={`onboarding-control rounded-xl h-9 ${institution ? "onboarding-control--completed" : ""}`}
+              className={`onboarding-control onboarding-written-input rounded-xl h-9 ${institution ? "onboarding-control--completed" : ""}`}
             />
           </div>
           <div>
